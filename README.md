@@ -143,63 +143,33 @@ Seperti yang telah dijelaskan pada bagian sebelumnya, pada penelitian ini akan d
 
 # **_Evaluation_**
 
-Pada penelitian ini, proses evaluasi dilakukan dengan menggunakan metrik evaluasi untuk menghitung serta menampilkan hasil akurasi dan _Mean Squared Error_ (MSE) dari model pada masing-masing algoritma yang telah dijalankan. Akurasi adalah ukuran yang menentukan tingkat kemiripan antara hasil prediksi dengan nilai yang sebenarnya (y_test) [7]. Sedangkan _Mean Squared Error_ (MSE) adalah alat ukur untuk mengukur tingkat _error_ yang terjadi dalam model statistik dengan cara menghitung jumlah selisih kuadrat rata-rata nilai sebenarnya dengan nilai prediksi [5]. MSE didefinisikan dalam persamaan berikut :
+Pada penelitian ini, proses evaluasi dilakukan dengan menggunakan _precision_ dan metrik evaluasi dengan matplotlib. _Precision_ adalah kecocokan antara bagian data yang diambil dengan informasi yang dibutuhkan [5]. Pada penelitian ini, _precision_ digunakan untuk mengevaluasi metode _Content Based Filtering_. Sedangkan metrik evaluasi dengan matplotlib digunakan untuk mengevaluasi metode _Collaborative Filtering_.  
 
-$$ MSE = { \frac {1} {N} \displaystyle\sum_{i=1}^{N} (y_i - ypred_i)^2 } $$
+_Precision_ didefinisikan dalam persamaan berikut :
 
-Keterangan: 
+$$ P = \frac {Rekomendasi yang relevan} {Jumlah item yang direkomendasikan} $$
 
-  N = jumlah dataset
+Jika diterapkan pada hasil dari top-5 rekomendasi film yang dihasilkan oleh metode _Content Based Filtering_, maka hasil _precision_-nya adalah sebagai berikut :
 
-  y = nilai sebenarnya
-  
-  ypred = nilai prediksi 
+$$ P = \frac {Rekomendasi yang relevan} {Jumlah item yang direkomendasikan} $$
+$$ P = \frac {5} {5} $$
+$$ P = 1 $$
 
-* Akurasi yang dihasilkan dari masing-masing algoritma yang telah dijalankan adalah sebagai berikut :
-  
-    |     KNN    |     RF     |  Boosting  |
-    |------------|------------|------------|
-    |  0.700835  |  0.762047  |  0.655286  |
+Sehingga dapat disimpulkan bahwa sistem rekomendasi dengan menggunakan metode _Content Based Filtering_ menghasilkan hasil keluaran dengan kecocokan yang tinggi, karena hasil perhitungan _precision_-nya sama dengan 1.
 
-    Tabel 1. Tabel akurasi yang dihasilkan dari masing-masing algoritma 
+Sedangkan hasil dari metrik evaluasi untuk metode _Collaborative Filtering_ yang menggunakan grafik dari matplotlib, dapat dilihat pada Gambar 4. 
 
-    Dari Tabel 1, dapat dilihat bahwa algoritma KNN memiliki tingkat akurasi sebesar 70.08%, algoritma _Random Forest_ memiliki tingkat akurasi sebesar 76.21% dan algoritma _Boosting_ (AdaBoost) memiliki tingkat akurasi sebesar 65.53%.
+![image](https://github.com/racheladita/Laporan-Proyek-Machine-Learning-Terapan-MLT4---Submission-2-Sistem-Rekomendasi/assets/77524477/bcdccfab-1e64-4ff4-b20d-72d70aa7e572)
 
-* Sedangkan untuk hasil perhitungan MSE pada data latih dan data uji dari masing-masing algoritma akan ditampilkan pada Tabel 2.
-  
-    |            |     Train     |      Test      |
-    |------------|---------------|----------------|
-    |     KNN    |  48503.16097  |  56972.672536  |
-    |     RF     |  21371.35881  |  45315.587228  |
-    |  Boosting  |  58512.40393  |  65647.005189  |
+Gambar 4. Metrik evaluasi untuk metode _Collaborative Filtering_
 
-    Tabel 2. Tabel perhitungan MSE pada data latih dan data uji dari masing-masing algoritma
-
-    ![image](https://github.com/racheladita/Laporan-Proyek-Machine-Learning-Terapan-MLT4---Submission-1-Predictive-Analytics/assets/77524477/b9381d31-2989-4dbe-8953-e6c8a5c6bd5e)
-
-    Gambar 9. Grafik perbandingan MSE antara data latih dan data uji pada masing-masing algoritma
-
-    Dari Tabel 2 dan Gambar 9, dapat dilihat bahwa algoritma _Random Forest_ memiliki tingkat _error_ yang lebih rendah jika dibandingkan dengan algoritma lainnya, dengan tingkat _error_ pada data latih sebesar 21371.35881 dan tingkat _error_ pada data uji sebesar 45315.587228.
-
-*  Hasil pengujian prediksi dari masing-masing model
-  
-    |            |     y_true    |  prediksi_KNN  |   prediksi_RF   |  prediksi_Boosting  |
-    |------------|---------------|----------------|-----------------|---------------------|
-    |    2735    |     13500     |     21785.7    |     12756.4     |        19640.2      |
-
-    Tabel 3. Hasil pengujian prediksi dari masing-masing model
-
-    Dari Tabel 3, dapat dilihat bahwa hasil prediksi menggunakan algoritma _Random Forest_ adalah hasil yang paling mendekati nilai sebenarnya, walaupun hasil prediksi ini tidak begitu akurat dengan nilai sebenarnya dikarenakan akurasinya yang belum begitu tinggi. 
-
-   Dari data yang telah disajikan, terlihat bahwa algoritma _Random Forest_ memiliki akurasi tertinggi sebesar 76.21% dan tingkat _error_ yang lebih rendah dibandingkan dengan algoritma lainnya pada data latih dan data uji. Hal ini menunjukkan bahwa _Random Forest_ memiliki performa yang lebih baik dalam memprediksi harga sewa rumah di India dibandingkan dengan algoritma-algoritma lain yang digunakan dalam penelitian ini. Meskipun hasil prediksi _Random Forest_ belum sepenuhnya akurat, hasilnya masih lebih mendekati nilai sebenarnya dibandingkan dengan algoritma lainnya. Sebagai hasilnya, algoritma _Random Forest_ dipilih sebagai model utama untuk memprediksi harga sewa rumah di India.
-
-   Dalam analisis komparatif, perlu diperhatikan bahwa setiap algoritma memiliki kelebihan dan kelemahan masing-masing. Misalnya, KNN bisa menjadi pilihan yang baik untuk data non-linear dan sederhana dalam konsepnya. Namun, _Random Forest_ menonjol dalam mengatasi data yang kompleks dan berdimensi tinggi serta mengurangi varians kesalahan prediksi. Di sisi lain, AdaBoost efektif dalam meningkatkan performa prediksi dengan menggabungkan model-model lemah menjadi model yang kuat. Jika interpretasi model menjadi prioritas, KNN bisa menjadi pilihan karena modelnya mudah diinterpretasi. Namun, jika fokus utamanya adalah mendapatkan akurasi dan prediksi terbaik yang mendekati nilai sebenarnya, _Random Forest_ bisa menjadi pilihan yang lebih baik.
+Dari Gambar 4 dapat dilihat bahwa proses pelatihan model cukup _smooth_ dan model konvergen pada _epochs_ sekitar 40. Dari proses ini, diperoleh nilai _error_ akhir sebesar 0.1764 dan nilai _error_ pada data validasi sebesar 0.2040. Nilai tersebut cukup bagus untuk sebuah sistem rekomendasi. 
 
 # **Kesimpulan**
 
-Penelitian ini bertujuan untuk menganalisis faktor-faktor yang mempengaruhi pemilihan penyewaan rumah dan memprediksi pilihan terbaik penyewaan rumah dengan menggunakan algoritma KNN, _Random Forest_, dan AdaBoost. Dari analisis ini, berhasil diidentifikasi faktor-faktor yang memengaruhi keputusan penyewaan rumah, dan algoritma-algoritma yang diterapkan memberikan prediksi yang memadai. Algoritma _Random Forest_ menunjukkan performa yang paling mendekati nilai sebenarnya dalam memprediksi pilihan terbaik untuk menyewa rumah. 
+Penelitian ini bertujuan untuk mengembangkan sistem rekomendasi film yang efektif dan akurat dalam menyajikan rekomendasi film yang lebih sesuai dengan minat dan preferensi masing-masing pengguna. Dengan begitu, pelaku bisnis dari platform _streaming_ film dapat menentukan target penonton dengan lebih tepat dan memberikan pengalaman menonton yang lebih personal dan memuaskan bagi para penggunanya. Dari penelitian ini, berhasil dibuat dua sistem rekomendasi dengan hasil yang cukup baik pula, yaitu sistem rekomendasi film berdasarkan data historis dari preferensi dan penilaian film oleh pengguna itu sendiri dengan menggunakan metode _Content Based Filtering_ yang menghasilkan _precision_ mendekati angka 1 dan sistem rekomendasi film berdasarkan data kolaboratif dari pengguna lain dengan minat serupa dengan menggunakan metode _Collaborative Filtering_ dimana nilai _error_ akhir sebesar 0.1764 dan nilai _error_ pada data validasi sebesar 0.2040, kedua nilai _error_ ini cukup bagus untuk sebuah sistem rekomendasi.
 
-Meskipun tujuan utama penelitian ini telah tercapai, untuk optimalisasi lebih lanjut, beberapa improvisasi pada model dapat dilakukan untuk meningkatkan kualitas prediksi dan akurasi sehingga dapat memberikan wawasan yang lebih akurat dan relevan bagi perusahaan atau pemilik properti dalam menentukan target penyewa dengan lebih tepat dan efisien.
+Meskipun tujuan utama penelitian ini telah tercapai, untuk optimalisasi lebih lanjut, beberapa improvisasi pada model dapat dilakukan untuk meningkatkan kualitas rekomendasi sehingga dapat memberikan wawasan yang lebih akurat dan relevan bagi para penggunanya dengan lebih tepat dan efisien.
 
 # **Referensi**
 
@@ -212,18 +182,4 @@ Service,” _Jesya Jurnal Ekonomi & Ekonomi Syariah_, vol. 6, no. 1, Jan. 2023, 
 
 [4]   Binus University Graduate Program. “Teknik pre-processing dan classification dalam data science,”. Tersedia: [tautan](https://mie.binus.ac.id/2022/08/26/teknik-pre-processing-dan-classification-dalam-data-science/). Diakses pada 31 Juli 2023.
 
-[3]    HaloRyan. "One Hot Encoding Pada Python". Tersedia: [tautan](https://haloryan.com/blog/one-hot-encoding-pada-python). Diakses pada 21 Juli 2023.
-
-[4]    QuickTran. "Cara Melakukan Train Test Split dalam Machine Learning". Tersedia: [tautan](https://www.quicktable.io/apps/id/train-test-split/). Diakses pada 21 Juli 2023.
-
-[5]    dicoding. "Rangkuman Studi Kasus Pertama: Predictive Analytics". Tersedia: [tautan](https://www.dicoding.com/academies/319/tutorials/18600). Diakses pada 21 Juli 2023.
-
-[6]    Jurnal UMM. Tersedia: [tautan](https://eprints.umm.ac.id/39299/3/BAB%202.pdf). Diakses pada 21 Juli 2023.
-
-[7]    Santoso, Didik R. (2017). Tim UB Press, Tim UB Press, ed. Pengukuran Stress Mekanik Berbasis Sensor Piezoelektrik: Prinsip Desain dan Implementasi. Malang: UB Press. hlm. 8. ISBN 978-602-432-089-8.
-
-[8]    HRMI Rights Tracker India. "Quality of Life, Economic and Social Rights". Tersedia: [tautan](https://rightstracker.org/country/IND). Diakses pada 24 Juli 2023.
-
-[9]    Medium. "Klasifikasi menggunakan Metode KNN (K-Nearest Neighbor) dalam Python". Tersedia: [tautan](https://medium.com/@16611130/klasifikasi-menggunakan-metode-knn-k-nearest-neighbor-dalam-python-a40e79a74101). Diakses pada 24 Juli 2023.
-
-[10]   Dataaspirant. "Adaboost Algorithm: Boosting Your ML Models to the Next Level". Tersedia: [tautan](https://medium.com/@16611130/klasifikasi-menggunakan-metode-knn-k-nearest-neighbor-dalam-python-a40e79a74101). Diakses pada 24 Juli 2023.
+[5] E-Jurnal UAJY. Tersedia: [tautan](http://e-journal.uajy.ac.id/11794/4/TF070093.pdf). Diakses pada 31 Juli 2023.
