@@ -57,7 +57,9 @@ Penelitian ini bertujuan untuk mengembangkan sistem rekomendasi film yang efekti
   3.  ratings.csv : _file_ ini berisi daftar penilaian yang diberikan oleh pengguna untuk suatu film yang berjumlah 100836 data.
   4.  tags.csv : _file_ ini berisi daftar kata kunci dari masing-masing film yang tersedia yang berjumlah 1572 data unik.
       
-  Tahapan selanjutnya adalah melakukan eksplorasi terhadap data dengan teknik _univariate exploratory data analysis_. Tahap eksplorasi penting untuk dilakukan karena bertujuan untuk memahami variabel-variabel yang terdapat pada data beserta korelasi antar variabelnya [3]. Selain itu,  
+  Tahapan selanjutnya adalah melakukan eksplorasi terhadap data dengan teknik _univariate exploratory data analysis_. Tahap eksplorasi penting untuk dilakukan karena bertujuan untuk memahami variabel-variabel yang terdapat pada data beserta korelasi antar variabelnya [3]. Pada tahapan ini, akan dilakukan eksplorasi data terhadap seluruh variabel yang telah disebutkan sebelumnnya, yaitu variabel 'links', 'movies', 'tags' dan juga 'ratings'.
+
+  Selain itu, proses yang tidak kalah penting untuk dilakukan, yaitu melakukan _pre-processing_ terhadap data sebelum diolah ke tahapan selanjutnya. Tahapan _pre-processing_ data diawali dengan melakukan penggabungan seluruh data pada seluruh variabel dengan mengkorelasikan tiap-tiap data pada masing-masing variabel dengan menggunakan kolom 'movieId' yang unik untuk kategori 'movie' dan menggunakan kolom 'userId' yang unik untuk kategori 'user' sebagai acuan dalam penggabungan ini. Kemudian, data yang sama akan dihapus agar data yang terdapat pada masing-masing kategori ('movie' dan 'user') bersifat unik.
 
 * _Explotary Data Analysis_
   
