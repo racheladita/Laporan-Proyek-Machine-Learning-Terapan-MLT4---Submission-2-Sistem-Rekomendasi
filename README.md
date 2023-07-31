@@ -123,8 +123,7 @@ Seperti yang telah dijelaskan pada bagian sebelumnya, pada penelitian ini akan d
 
    Gambar 2. Hasil dari top-5 rekomendasi film yang mirip dengan film Star Wars: Episode III - Revenge of the Sith
 
-   Dari Gambar 2 dapat dilihat bahwa film dengan _genre_ antara 'Action', 'Adventure' atau 'Sci-Fi' menjadi film yang direkomendasikan oleh sistem. Hal ini didasarkan pada data uji pada Gambar 1 yang dianggap sebagai film yang pernah ditonton atau disukai oleh seorang penonton/pengguna di masa lalu.
-
+   Dari Gambar 2 dapat dilihat bahwa film dengan _genre_ antara 'Action', 'Adventure' atau 'Sci-Fi' menjadi film yang direkomendasikan oleh sistem. Hal ini didasarkan pada _genre_ film data uji pada Gambar 1 yang dianggap sebagai film yang pernah ditonton atau disukai oleh seorang penonton/pengguna di masa lalu.
    
 *  _Collaborative Filtering_
   
@@ -133,6 +132,14 @@ Seperti yang telah dijelaskan pada bagian sebelumnya, pada penelitian ini akan d
    Kelebihan metode _Collaborative Filtering_ antara lain mampu memberikan rekomendasi yang akurat dan relevan berdasarkan pola penilaian dari pengguna lain dengan preferensi serupa, dapat merekomendasikan film-film baru yang belum pernah dilihat oleh pengguna, karena model tidak bergantung pada atribut film serta efektif dalam menangani masalah skala besar, karena mengandalkan data interaksi antara pengguna.
 
    Sedangkan kekurangan metode _Collaborative Filtering_ adalah tidak efektif untuk pengguna baru (_cold-start problem_) atau film baru, karena membutuhkan data penilaian dari pengguna terkait sebelumnya dan cenderung menghasilkan rekomendasi yang populer secara keseluruhan, sehingga mungkin mengabaikan preferensi individu tertentu.
+
+   Pada penelitian ini, sistem rekomendasi yang telah berhasil dibangun menggunakan metode _Collaborative Filtering_ akan diuji untuk mendapatkan rekomendasi film untuk seorang pengguna dimana hasil rekomendasi merupakan rekomendasi yang mengandalkan pendapat dari pengguna lain.
+
+   ![image](https://github.com/racheladita/Laporan-Proyek-Machine-Learning-Terapan-MLT4---Submission-2-Sistem-Rekomendasi/assets/77524477/f7662449-7804-4c06-9ced-0ab6ab67e714)
+
+   Gambar 3. Hasil dari top-10 rekomendasi film yang mengandalkan pendapat dari pengguna lain
+
+   Dari Gambar 3 dapat dilihat bahwa film dengan _genre_ drama menjadi film yang paling tinggi _rating_-nya. Selanjutnya, sistem memberikan top-10 rekomendasi film dengan mayoritas _genre_-nya adalah drama. Dapat dilihat bahwa dari 10 rekomendasi film, 7 diantaranya merupakan film dengan _genre_ drama, sehingga hasil ini sesuai dengan _rating genre_ film tertinggi yang telah dinilai oleh pengguna lain.
 
 # **_Evaluation_**
 
