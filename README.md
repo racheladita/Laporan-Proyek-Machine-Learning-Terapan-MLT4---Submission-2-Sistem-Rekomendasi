@@ -50,36 +50,54 @@ Penelitian ini bertujuan untuk mengembangkan sistem rekomendasi film yang efekti
 
 * Penelitian ini menggunakan dataset yang berjudul 'Movie Recommendation Data' yang diambil dari Kaggle dengan link [dataset](https://www.kaggle.com/datasets/rohan4050/movie-recommendation-data).
 
-* Dataset ini memiliki 5 _file_ dengan format CSV (*comma separated value*). Namun, salah satu _file_-nya merupakan _file_ metadata film yang tidak akan dipakai dalam membangun model pada penelitian ini. Berikut merupakan keempat _file_ yang akan dipakai untuk membangun model :
+* Dataset ini memiliki 5 _file_ dengan format CSV (*comma separated value*). Salah satu dari _file_ tersebut merupakan _file_ metadata film. Metadata adalah dokumen yang berisi mengenai informasi tambahan tentang suatu film, seperti sinopsis, sutradara, pemeran, durasi, dan bahasa film. Namun, dalam penelitian ini, _file_ metadata tidak akan digunakan karena fokus utama pada penelitian ini adalah membangun model sistem rekomendasi berdasarkan penilaian pengguna. Berikut merupakan keempat _file_ yang akan dipakai untuk membangun model :
 
-  1.  links.csv : _file_ ini berisi daftar _link_ dari film yang berjumlah 9742 data unik.
-  2.  movies.csv : _file_ ini berisi daftar dari film yang tersedia yang berjumlah 9742 data unik.
-  3.  ratings.csv : _file_ ini berisi daftar penilaian yang diberikan oleh pengguna untuk suatu film yang berjumlah 100836 data.
-  4.  tags.csv : _file_ ini berisi daftar kata kunci dari masing-masing film yang tersedia yang berjumlah 1572 data unik.
+  1.  links.csv : _file_ ini berisi daftar variabel _link_ dari film yang berjumlah 9742 data unik.
+  2.  movies.csv : _file_ ini berisi daftar dari variabel film yang tersedia yang berjumlah 9742 data unik.
+  3.  ratings.csv : _file_ ini berisi daftar variabel penilaian yang diberikan oleh pengguna untuk suatu film yang berjumlah 100836 data.
+  4.  tags.csv : _file_ ini berisi daftar variabel kata kunci dari masing-masing film yang tersedia yang berjumlah 1572 data unik.
       
-  Tahapan selanjutnya adalah melakukan eksplorasi terhadap data dengan teknik _univariate exploratory data analysis_. Tahap eksplorasi penting untuk dilakukan karena bertujuan untuk memahami variabel-variabel yang terdapat pada data beserta korelasi antar variabelnya [3]. Pada tahapan ini, akan dilakukan eksplorasi data terhadap seluruh variabel yang telah disebutkan sebelumnnya, yaitu variabel 'links', 'movies', 'tags' dan juga 'ratings'.
+  Tahapan selanjutnya adalah melakukan eksplorasi terhadap data dengan teknik _univariate exploratory data analysis_. Tahap eksplorasi penting untuk dilakukan karena bertujuan untuk memahami variabel-variabel yang terdapat pada data beserta korelasi antar variabelnya [3]. Analisis data _univariate_ dilakukan dengan mengeksplorasi data yang melibatkan penelitian lebih lanjut tentang setiap variabel secara terpisah. Pada tahapan ini, akan dilakukan eksplorasi data terhadap seluruh variabel yang telah disebutkan sebelumnnya, yaitu variabel 'links', 'movies', 'tags' dan juga 'ratings'.
 
-  Selain itu, proses yang tidak kalah penting untuk dilakukan, yaitu melakukan _pre-processing_ terhadap data sebelum diolah ke tahapan selanjutnya. Tahapan _pre-processing_ data diawali dengan melakukan penggabungan seluruh data pada seluruh variabel dengan mengkorelasikan tiap-tiap data pada masing-masing variabel dengan menggunakan kolom 'movieId' yang unik untuk kategori 'movie' dan menggunakan kolom 'userId' yang unik untuk kategori 'user' sebagai acuan dalam penggabungan ini. Kemudian, data yang sama akan dihapus agar data yang terdapat pada masing-masing kategori ('movie' dan 'user') bersifat unik.
+  Selain itu, proses yang tidak kalah penting untuk dilakukan, yaitu melakukan _pre-processing_ terhadap data sebelum diolah ke tahapan selanjutnya. Tahapan _pre-processing_ data bertujuan untuk membersihkan, mengubah, atau mengorganisasi data agar siap untuk tahap pemodelan [4]. Pada penelitian ini, _pre-processing_ data diawali dengan melakukan penggabungan seluruh data pada seluruh variabel dengan mengkorelasikan tiap-tiap data pada masing-masing variabel dengan menggunakan kolom 'movieId' yang unik untuk kategori 'movie' dan menggunakan kolom 'userId' yang unik untuk kategori 'user' sebagai acuan dalam penggabungan ini. Kemudian, data yang sama (data duplikat) akan dihapus agar data yang terdapat pada masing-masing kategori ('movie' dan 'user') bersifat unik.
 
 # **_Data Preparation_**
 
-Berikut ini merupakan tahapan-tahapan yang dilakukan dalam mempersiapkan data sebelum dilakukan pemodelan.
+Berikut ini merupakan tahapan-tahapan yang dilakukan dalam mempersiapkan data untuk model yang dibangun dengan metode _Content Based Filtering_.
 
 *   Menghilangkan _Missing Value_
 
-    Setelah dilakukan proses penggabungan data, pasti akan ditemukan _missing value_ akibat data yang digabungkan terdiri dari banyak data. 
+    Setelah dilakukan proses penggabungan data dari beberapa variabel, ditemukan _missing value_ akibat banyaknya fitur yang digabungkan dari variabel-variabel tersebut. _Missing value_ ini ditemukan pada fitur 'tag', dimana _missing value_ yang terdeteksi sebanyak 52.549 data. Meskipun jumlah data ini sangat signifikan, _missing value_ ini akan dihapus dari dataset dikarenakan fitur ini kurang berpengaruh terhadap sistem rekomendasi yang akan dibangun. 
 
-*   _One Hot Encoding_
+*   Menghapus Data Duplikat
   
-    _One hot encoding_ adalah sebuah proses yang biasanya dilakukan pada bagian _pre-processing_ yang bertujuan untuk mengubah data kategorik menjadi data numerik dimana setiap kategori unik akan diubah menjadi kolom/parameter baru dengan nilai 0 atau 1 [3]. Pada penelitian ini, fitur yang akan diubah menjadi data numerik adalah fitur 'Area Type', 'City', 'Furnishing Status', 'Tenant Preferred' dan 'Point of Contact'.
+    Selanjutnya, dilakukan penghapusan data duplikat dari fitur 'movieId' menggunakan fungsi drop_duplicates(). Langkah ini penting untuk dilakukan karena dalam pemodelan yang dibangun, hanya akan digunakan fitur 'movieId' yang unik untuk membangun model rekomendasi.
 
-*   Pembagian Data Latih dan Data Uji (_Train Test Split_)
+*   Membuat _Dictionary_
   
-    _Train test split_ adalah proses penting yang umumnya dilakukan dalam pembelajaran mesin yang digunakan untuk membagi data menjadi data latih dan data uji [4]. Pada penelitian ini, dataset yang ada akan dibagi menjadi 2 bagian yaitu data latih dan data uji dengan rasio 85:15. Sehingga, sebanyak 3508 data latih akan digunakan untuk membangun model, sedangkan 620 data akan digunakan sebagai data uji untuk menguji performa model yang akan dibuat. Proses pembagian data ini dilakukan dengan menggunakan modul train_test_split dari _library_ scikit-learn.
+    Selanjutnya, dilakukan proses pembuatan _dictionary_ yang digunakan untuk menentukan pasangan _key-value_ pada data yang telah disiapkan sebelumnya. Setelah proses ini selesai dijalankan, data telah siap untuk dimasukkan ke dalam pemodelan untuk model yang dibangun dengan metode _Content Based Filtering_.
      
-*   Normalisasi Data
-  
-    Algoritma pada pembelajaran mesin akan memiliki performa lebih baik dan bekerja lebih cepat jika dimodelkan dengan data yang seragam. Data seragam yang dimaksud adalah data yang memiliki skala relatif sama. Pada penelitian ini, proses normalisasi data dilakukan dengan menggunakan StandardScaler dari _library_ sklearn.preprocessing.
+Sedangkan berikut ini merupakan tahapan-tahapan yang dilakukan dalam mempersiapkan data untuk model yang dibangun dengan metode _Collaborative Filtering_.
+
+*   Memahami Data _Rating_
+
+    Pada tahap ini, perlu dilakukan pemahaman terhadap data _rating_ yang dimiliki. Data _rating_ berisi penilaian yang diberikan oleh pengguna untuk berbagai film. Penilaian ini akan menjadi dasar dalam membangun model rekomendasi menggunakan metode _Collaborative Filtering_.
+    
+*   Melakukan Proses _Encoding_
+
+    Fitur 'user' dan 'movieId' perlu di-_encode_ menjadi indeks bilangan bulat (_integer_) agar dapat digunakan dalam model _Collaborative Filtering_. Indeks ini memudahkan proses perhitungan dalam model dan menghindari kesalahan saat melakukan perbandingan.
+    
+*   Memetakan ‘userId’ dan ‘movieId’ ke _Dataframe_ yang Berkaitan.
+
+    Kemudian, akan dilakukan pemetaan 'userId' dan 'movieId' ke _dataframe_ yang berkaitan. Hal ini memungkinkan untuk menyusun data secara efisien dan membentuk matriks peringkat (_rating matrix_) yang diperlukan dalam model _Collaborative Filtering_.
+    
+*   Mengecek Beberapa Hal dalam Data.
+
+    Proses ini mencakup pemeriksaan beberapa hal seperti jumlah pengguna (_user_) dan jumlah film yang ada dalam dataset. Kemudian, perlu juga mengubah nilai _rating_ menjadi _float_ agar dapat digunakan dalam perhitungan yang lebih tepat.
+
+*   Membagi Data
+
+    Langkah selanjutnya adalah membagi data menjadi dua _subset_, yaitu data latih (_training data_) dan data validasi (_validation data_) dengan rasio 80 : 20. Data latih digunakan untuk melatih model _Collaborative Filtering_ dengan cara mempelajari pola dari data _rating_ yang ada, sementara data validasi digunakan untuk menguji kinerja model yang telah dilatih dan melihat sejauh mana model dapat memberikan rekomendasi yang akurat dan relevan terhadap data yang belum pernah dilihat sebelumnya. Penggunaan data latih dan data validasi ini bertujuan untuk mengevaluasi performa model dan mencegah _overfitting_. 
 
 # **_Modeling_**
 
@@ -202,11 +220,11 @@ Meskipun tujuan utama penelitian ini telah tercapai, untuk optimalisasi lebih la
 [1]    N. A. Munawaroh, S. Kalimah, dan Z. Muttaqien, “Netflix In Indonesia : Customer Willingness To Pay in Video Streaming
 Service,” _Jesya Jurnal Ekonomi & Ekonomi Syariah_, vol. 6, no. 1, Jan. 2023, doi:  https://doi.org/10.36778/jesya.v6i1.1136. [Online]. Tersedia: [tautan]([http://dx.doi.org/10.3390/su10072336](https://stiealwashliyahsibolga.ac.id/jurnal/index.php/jesya/article/download/1136/581)). 
 
-[2]    S. Sari and D. T. Hendra, “Aplikasi Rekomendasi Film menggunakan Pendekatan Collaborative Filtering dan Euclidean Distance sebagai ukuran kemiripan rating ISBN : 979-26-0280-1 ISBN : 979-26-0280-1,” pp. 135–140, 2015.
+[2]    S. Sari dan D. T. Hendra, “Aplikasi Rekomendasi Film menggunakan Pendekatan Collaborative Filtering dan Euclidean Distance sebagai ukuran kemiripan rating ISBN : 979-26-0280-1 ISBN : 979-26-0280-1,” pp. 135–140, 2015.
 
-[3]    dicoding. "Rangkuman Studi Kasus Keempat: Sistem Rekomendasi". Tersedia: [tautan]([https://www.dicoding.com/academies/319/tutorials/18600](https://www.dicoding.com/academies/319/tutorials/19672)). Diakses pada 31 Juli 2023.
+[3]    dicoding. "Rangkuman Studi Kasus Keempat: Sistem Rekomendasi". Tersedia: [tautan](https://www.dicoding.com/academies/319/tutorials/19672). Diakses pada 31 Juli 2023.
 
-[2]    M. Ranjbari, G. Morales-Alonso, and R. Carrasco-Gallego, “Conceptualizing the Sharing Economy through Presenting a Comprehensive Framework,” _Sustainability_, vol. 10, no. 7, p. 2336, Jul. 2018, doi: 10.3390/su10072336. [Online]. Tersedia: [tautan](http://dx.doi.org/10.3390/su10072336). 
+[4]   Binus University Graduate Program. “Teknik pre-processing dan classification dalam data science,”. Tersedia: [tautan](https://mie.binus.ac.id/2022/08/26/teknik-pre-processing-dan-classification-dalam-data-science/). Diakses pada 31 Juli 2023.
 
 [3]    HaloRyan. "One Hot Encoding Pada Python". Tersedia: [tautan](https://haloryan.com/blog/one-hot-encoding-pada-python). Diakses pada 21 Juli 2023.
 
