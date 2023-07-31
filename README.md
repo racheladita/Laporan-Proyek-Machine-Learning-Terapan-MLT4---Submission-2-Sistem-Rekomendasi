@@ -6,45 +6,45 @@
 
 # **Domain Proyek**
 
-India adalah negara yang kaya akan keanekaragaman geografis dan sosial. Namun, negara ini juga dihadapkan pada tantangan yang serius terkait masalah perumahan. Perbedaan signifikan dalam kondisi perumahan antara wilayah perkotaan dan pedesaan menjadi salah satu isu krusial yang perlu diperhatikan.
+Dalam era modern, industri film telah mengalami kemajuan pesat dengan munculnya berbagai platform digital dan situs _streaming_ film. Menurut survey yang dilakukan oleh Populix [1], Netflix adalah platform _streaming_ film yang paling digemari di Indonesia, disusul Disney+ Hotstar, Viu, WeTV, dan lain-lain. Akses yang mudah ke berbagai macam film dari seluruh dunia telah membuka peluang bagi pengguna untuk menikmati hiburan film secara luas dan bervariasi. Namun, kemajuan ini juga membawa masalah baru, yaitu munculnya kebingungan dalam memilih film di tengah banyaknya pilihan yang tersedia.
 
-Wilayah perkotaan di India umumnya ditandai dengan infrastruktur yang lebih baik, aksesibilitas yang lebih baik terhadap pendidikan dan layanan kesehatan, serta beragam pilihan pekerjaan. Namun, sebagai akibat dari urbanisasi berkelanjutan, kota-kota di India seringkali menghadapi lonjakan penduduk yang cepat, yang mengakibatkan peningkatan permintaan akan perumahan. Tingginya angka pertumbuhan penduduk dan kebutuhan perumahan yang belum terpenuhi menyebabkan semakin meningkatnya kesenjangan pemenuhan kebutuhan perumahan di wilayah perkotaan [1].
+Masalah pemilihan film menjadi semakin kompleks seiring meningkatnya jumlah produksi film dari berbagai _genre_ dan budaya. Setiap pengguna memiliki preferensi dan selera yang berbeda-beda, serta latar belakang budaya dan nilai yang beraneka ragam. Kekhawatiran utama adalah bagaimana memberikan pengalaman yang memuaskan bagi pengguna dengan menawarkan film-film yang sesuai dengan minat dan preferensinya. Untuk mengatasi masalah ini, perusahaan film dan platform _streaming_, seperti Netflix, telah mulai mengembangkan sistem rekomendasi yang inovatif.
 
-Di sisi lain, wilayah pedesaan memiliki kondisi perumahan dan infrastruktur yang sering kali lebih sederhana. Akses ke layanan, termasuk pendidikan dan kesehatan, mungkin terbatas di wilayah-wilayah ini. Sebagian besar penduduk pedesaan bergantung pada mata pencaharian pertanian atau pekerjaan terkait pedesaan, dan ketidakstabilan ekonomi di sektor ini dapat mempengaruhi kemampuan mereka untuk membeli atau memiliki rumah yang layak.
+Sistem rekomendasi merupakan sebuah aplikasi yang bertujuan untuk memberikan suatu informasi mengenai saran/rekomendasi ataupun penilaian akan suatu hal yang dapat memberi manfaat bagi penggunanya [2]. Dalam hal ini, sistem rekomendasi film merupakan solusi yang sangat diharapkan untuk membantu pengguna dalam memilah-milah film melalui banyaknya pilihan film yang ada. Dengan menggunakan data historis dari preferensi dan penilaian film oleh pengguna itu sendiri, serta data kolaboratif dari pengguna lain dengan minat serupa, sistem rekomendasi berusaha memberikan rekomendasi yang tepat dan relevan untuk setiap pengguna.
 
-Menurut _Human Rights Measurement Initiative_ [8], India baru mencapai 68,7% dari potensi hak atas perumahan yang semestinya dapat terpenuhi berdasarkan tingkat pendapatan negara tersebut. Artinya, masih banyak orang di India yang tidak bisa memperoleh perumahan yang seharusnya bisa mereka dapatkan.
+Dalam era digital yang serba cepat, jumlah film yang tersedia untuk ditonton semakin melonjak, sehingga pengguna sering kali dibombardir dengan kelebihan informasi. Sistem rekomendasi berfungsi sebagai kurator yang membantu menyaring dan menyarankan pilihan film yang paling relevan bagi setiap pengguna, sehingga diharapkan para pengguna dapat menghemat waktu serta menghemat usaha yang dikeluarkan pada saat mencari film yang akan ditonton.
 
-Kekurangan perumahan telah menjadi isu serius bagi sebagian besar masyarakat di India. Salah satu pilihan bagi mereka yang belum memiliki rumah adalah menyewa properti, seperti rumah atau apartemen. Fenomena penyewaan properti ini juga mencerminkan tren ekonomi berbagi yang semakin berkembang pesat di berbagai belahan dunia. Ekonomi berbagi merupakan suatu tindakan modernisasi yang menggunakan platform _online_ untuk memfasilitasi dan menurunkan biaya transaksi nirlaba untuk memberikan akses sementara tanpa transfer kepemilikan pada sumber daya konsumen yang menganggur [2]. Dengan kata lain, seseorang atau sekelompok orang dapat memanfaatkan properti (dalam kasus ini, properti tempat tinggal) milik orang lain untuk memenuhi kebutuhan mereka.
+Dengan memanfaatkan data dari aktivitas sebelumnya, seperti riwayat penontonan dan ulasan (_rating_) yang diberikan, sistem rekomendasi dapat memberikan rekomendasi film yang sesuai dengan minat dan preferensi masing-masing pengguna. Hal ini menciptakan pengalaman menonton yang lebih personal dan memuaskan. Dengan menyajikan rekomendasi yang akurat dan menarik, sistem rekomendasi dapat membantu meningkatkan retensi pengguna dalam menggunakan suatu platform _streaming_ film. Pengguna cenderung lebih lama berinteraksi dengan layanan yang menyajikan konten yang relevan dan menarik bagi dirinya.
 
-Dalam konteks India, tantangan kekurangan perumahan dan model ekonomi berbagi ini memiliki implikasi sosial, ekonomi, dan kebijakan yang kompleks. Oleh karena itu, langkah-langkah solutif yang holistik dan berkelanjutan diperlukan untuk mengatasi masalah ini dan memastikan bahwa setiap warga negara di India memiliki akses terhadap perumahan yang layak dan memadai.
+Meskipun sistem rekomendasi menawarkan banyak manfaat, mengembangkan sistem yang akurat dan efektif juga melibatkan beberapa tantangan. Untuk memperoleh data yang berkualitas dan relevan, data harus mencakup preferensi pengguna, riwayat penontonan, dan peringkat film yang memadai untuk memberikan rekomendasi yang akurat. Dalam platform besar seperti Netflix, jumlah pengguna dan film sangat besar, sehingga mengelola data sebanyak itu dan menyajikan rekomendasi secara efisien adalah tugas yang kompleks.
 
 # **_Business Understanding_**
 
-Penelitian ini bertujuan untuk menganalisis faktor apa saja yang dapat mempengaruhi pemilihan penyewaan rumah atau tempat tinggal. Dengan begitu, perusahaan atau pemilik properti yang hendak menyewakan properti miliknya dapat menentukan target penyewa dengan lebih tepat dan sesuai dengan kondisi properti yang ada.
+Penelitian ini bertujuan untuk mengembangkan sistem rekomendasi film yang efektif dan akurat dalam menyajikan rekomendasi film yang lebih sesuai dengan minat dan preferensi masing-masing pengguna. Dengan begitu, pelaku bisnis dari platform _streaming_ film dapat menentukan target penonton dengan lebih tepat dan memberikan pengalaman menonton yang lebih personal dan memuaskan bagi para penggunanya. Dengan memanfaatkan teknologi dan data yang tepat, diharapkan sistem rekomendasi ini dapat terus berkembang dan memberikan manfaat yang lebih besar bagi industri film dan para penikmat film di seluruh dunia.
 
 *   _Problem Statements_
     
     Berdasarkan uraian latar belakang masalah yang telah dijelaskan pada bagian sebelumnya, berikut ini merupakan rumusan masalah dari penelitian ini :
 
-    a.   Apa saja faktor yang mempengaruhi pengambilan keputusan untuk menyewa suatu rumah ?
+    a.   Bagaimana membuat sistem rekomendasi film berdasarkan data historis dari preferensi dan penilaian film oleh pengguna itu sendiri ?
     
-    b.   Apa algoritma yang mampu memprediksi pilihan terbaik untuk menyewa suatu rumah ?
+    b.   Bagaimana membuat sistem rekomendasi film berdasarkan data kolaboratif dari pengguna lain dengan minat serupa ?
 
 *   _Goals_
   
     Berikut ini merupakan uraian tujuan dari rumusan masalah yang telah dijelaskan :
     
-    a.   Menentukan faktor yang mempengaruhi pengambilan keputusan untuk menyewa suatu rumah.
+    a.   Membuat sistem rekomendasi film berdasarkan data historis dari preferensi dan penilaian film oleh pengguna itu sendiri.
     
-    b.   Menentukan algoritma yang mampu memprediksi pilihan terbaik untuk menyewa suatu rumah
+    b.   Membuat sistem rekomendasi film berdasarkan data kolaboratif dari pengguna lain dengan minat serupa.
 
 *   _Solution Statements_
   
     Untuk memenuhi tujuan dari penelitian ini, berikut merupakan solusi yang dapat penulis ajukan :
     
-    a.   Untuk mengetahui algoritma yang terbaik dalam menentukan pilihan penyewaan rumah, akan dilakukan komparasi terhadap tiga jenis algoritma, yaitu _K-Nearest Neighbour_ (KNN), _Random Forest_ dan AdaBoost.
+    a.   Untuk membuat sistem rekomendasi film berdasarkan data historis dari preferensi dan penilaian film oleh pengguna itu sendiri akan digunakan metode _Content Based Filtering_. _Content Based Filtering_ mempelajari profil minat pengguna dengan menyarankan item serupa yang pernah disukai di masa lalu atau sedang dilihat di masa kini kepada pengguna [3].
     
-    b.   Setelah ketiga jenis algoritma tersebut berhasil dijalankan, akan dilakukan evaluasi untuk mengukur nilai akurasi pada masing-masing algoritma.
+    b.   Untuk membuat sistem rekomendasi film berdasarkan data kolaboratif dari pengguna lain dengan minat serupa akan digunakan metode _Collaborative Filtering_.
 
 # **_Data Understanding_**
 
@@ -270,7 +270,12 @@ Meskipun tujuan utama penelitian ini telah tercapai, untuk optimalisasi lebih la
 
 # **Referensi**
 
-[1]    Suparwoko, Woko. (2013). BAB 3 KEBIJAKAN DAN PRAKTEK PEMBANGUNAN PERUMAHAN SEJUMLAH NEGARA DI ASIA-PASIFIK. 10.13140/2.1.2263.8880. 
+[1]    N. A. Munawaroh, S. Kalimah, dan Z. Muttaqien, “Netflix In Indonesia : Customer Willingness To Pay in Video Streaming
+Service,” _Jesya Jurnal Ekonomi & Ekonomi Syariah_, vol. 6, no. 1, Jan. 2023, doi:  https://doi.org/10.36778/jesya.v6i1.1136. [Online]. Tersedia: [tautan]([http://dx.doi.org/10.3390/su10072336](https://stiealwashliyahsibolga.ac.id/jurnal/index.php/jesya/article/download/1136/581)). 
+
+[2]    S. Sari and D. T. Hendra, “Aplikasi Rekomendasi Film menggunakan Pendekatan Collaborative Filtering dan Euclidean Distance sebagai ukuran kemiripan rating ISBN : 979-26-0280-1 ISBN : 979-26-0280-1,” pp. 135–140, 2015.
+
+[3]    dicoding. "Rangkuman Studi Kasus Keempat: Sistem Rekomendasi". Tersedia: [tautan]([https://www.dicoding.com/academies/319/tutorials/18600](https://www.dicoding.com/academies/319/tutorials/19672)). Diakses pada 31 Juli 2023.
 
 [2]    M. Ranjbari, G. Morales-Alonso, and R. Carrasco-Gallego, “Conceptualizing the Sharing Economy through Presenting a Comprehensive Framework,” _Sustainability_, vol. 10, no. 7, p. 2336, Jul. 2018, doi: 10.3390/su10072336. [Online]. Tersedia: [tautan](http://dx.doi.org/10.3390/su10072336). 
 
