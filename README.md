@@ -61,77 +61,13 @@ Penelitian ini bertujuan untuk mengembangkan sistem rekomendasi film yang efekti
 
   Selain itu, proses yang tidak kalah penting untuk dilakukan, yaitu melakukan _pre-processing_ terhadap data sebelum diolah ke tahapan selanjutnya. Tahapan _pre-processing_ data diawali dengan melakukan penggabungan seluruh data pada seluruh variabel dengan mengkorelasikan tiap-tiap data pada masing-masing variabel dengan menggunakan kolom 'movieId' yang unik untuk kategori 'movie' dan menggunakan kolom 'userId' yang unik untuk kategori 'user' sebagai acuan dalam penggabungan ini. Kemudian, data yang sama akan dihapus agar data yang terdapat pada masing-masing kategori ('movie' dan 'user') bersifat unik.
 
-* _Explotary Data Analysis_
-  
-  *   _Univariate Analysis_
-    
-      ![image](https://github.com/racheladita/Laporan-Proyek-Machine-Learning-Terapan-MLT4---Submission-1-Predictive-Analytics/assets/77524477/a5fefd6c-ca66-4a30-aaa5-8b0bde5bc751)
-
-      Gambar 1. Analisis univariat
-
-      Gambar di atas merupakan grafik sebaran analisis univariat untuk setiap fitur numerik yang direpresentasikan secara terpisah. Dari grafik tersebut, informasi yang dapat diambil adalah sebagai berikut :
-      1. Rumah yang disewakan memiliki 1 hingga 3 BHK (_Bedroom_, _Hall_, _Kitchen_), dimana jumlah BHK terbanyak adalah 2.
-      2. Kebanyakan rumah yang disewakan memiliki ukuran atau luas bangunan di bawah 2000 _square feet_.
-      3. Rumah yang disewakan memiliki 1 hingga 3 kamar mandi, dimana jumlah kamar mandi terbanyak adalah 2.
-      4. Harga sewa rumah rata-rata di bawah 30.000.
-
-  *   _Multivariate Analysis_
-    
-      ![image](https://github.com/racheladita/Laporan-Proyek-Machine-Learning-Terapan-MLT4---Submission-1-Predictive-Analytics/assets/77524477/887d7a47-5474-4b57-8668-bd4061d93797)
- 
-      Gambar 2. Analisis multivariat
-
-      Gambar di atas merupakan grafik sebaran analisis multivariat yang menunjukkan hubungan antara dua atau lebih fitur dalam data numerik. Selain itu, hubungan atau korelasi antar fitur data numerik ini dapat dilihat dari matriks _heatmap_ pada Gambar 3.
-
-      ![image](https://github.com/racheladita/Laporan-Proyek-Machine-Learning-Terapan-MLT4---Submission-1-Predictive-Analytics/assets/77524477/e2776c15-7d54-4c31-a620-2007bc4c5232)
- 
-      Gambar 3. Matriks _heatmap_ yang menyatakan korelasi antar fitur data numerik
-      
-      Dari Gambar 3, semakin terlihat bahwa fitur 'BHK', 'Size' dan 'Bathroom' kurang berkorelasi dengan fitur target, yaitu 'Rent'. Hal ini diduga disebabkan karena kurangnya data dalam penelitian dan diduga pula akan mempengaruhi akurasi dari model yang akan dijalankan. Sedangkan, fitur yang memiliki korelasi tinggi justru terjadi pada fitur 'BHK' dengan fitur 'Bathroom' yang mencapai korelasi 0.73.
-
-  *   Korelasi Antara Fitur Kategorik dengan Fitur Target ('Rent')
-    
-      ![image](https://github.com/racheladita/Laporan-Proyek-Machine-Learning-Terapan-MLT4---Submission-1-Predictive-Analytics/assets/77524477/740c0cbb-e783-444c-97b2-375d8584698e)
- 
-      Gambar 4. Korelasi antara fitur target ('Rent') dengan fitur 'Area Type'
-      
-      Grafik yang terlihat pada Gambar 4 menunjukan korelasi antara fitur target ('Rent') dengan fitur 'Area Type', dimana tipe area 'Carpet Area' memiliki korelasi yang lebih tinggi dengan fitur 'Rent' jika dibandingkan dengan 'Super Area'.
-      
-      ![image](https://github.com/racheladita/Laporan-Proyek-Machine-Learning-Terapan-MLT4---Submission-1-Predictive-Analytics/assets/77524477/057b1ed4-0207-47d4-8ba3-78a3790727f0)
-
-      Gambar 5. Korelasi antara fitur target ('Rent') dengan fitur 'City'
-      
-      Grafik yang terlihat pada Gambar 5 menunjukan korelasi antara fitur target ('Rent') dengan fitur 'City', dimana kota Mumbai merupakan kota yang paling banyak memiliki rumah yang disewakan. Dengan alasan ini, mendukung pernyataan bahwa korelasi tertinggi antara fitur target ('Rent') dengan fitur 'City' terjadi di kota Mumbai.
- 
-      ![image](https://github.com/racheladita/Laporan-Proyek-Machine-Learning-Terapan-MLT4---Submission-1-Predictive-Analytics/assets/77524477/c3ac80ba-80c0-473d-9243-de4ba6cfe824)
-
-      Gambar 6. Korelasi antara fitur target ('Rent') dengan fitur 'Furnishing Status'
-      
-      Grafik yang terlihat pada Gambar 6 menunjukan korelasi antara fitur target ('Rent') dengan fitur 'Furnishing Status', dimana korelasi tertinggi ditunjukkan oleh status 'Furnished' atau dengan kata lain rumah yang kondisinya disewakan beserta dengan perabotannya akan memiliki harga sewa yang lebih tinggi.
-      
-      ![image](https://github.com/racheladita/Laporan-Proyek-Machine-Learning-Terapan-MLT4---Submission-1-Predictive-Analytics/assets/77524477/81a6aeed-e37b-47b4-ba9d-9ff1285e6d50)
- 
-      Gambar 7. Korelasi antara fitur target ('Rent') dengan fitur 'Tenant Preferred'
-      
-      Grafik yang terlihat pada Gambar 7 menunjukan korelasi antara fitur target ('Rent') dengan fitur 'Tenant Preferred', dimana korelasi tertinggi ditunjukkan oleh 'Family' atau dengan kata lain rumah yang disewakan untuk sebuah keluarga akan memiliki harga sewa yang lebih tinggi dibandingkan dengan tipe penyewa yang lain.
-      
-      ![image](https://github.com/racheladita/Laporan-Proyek-Machine-Learning-Terapan-MLT4---Submission-1-Predictive-Analytics/assets/77524477/97512015-14b7-4f47-a34b-ec0161608e40)
-
-      Gambar 8. Korelasi antara fitur target ('Rent') dengan fitur 'Point of Contact'
-      
-      Grafik yang terlihat pada Gambar 8 menunjukan korelasi antara fitur target ('Rent') dengan fitur 'Point of Contact', dimana korelasi tertinggi ditunjukkan oleh 'Contact Agent' atau dengan kata lain penyewaan rumah yang membutuhkan pihak ketiga (agen) dalam melancarkan proses transaksinya akan memiliki harga sewa yang lebih tinggi.
-
 # **_Data Preparation_**
 
 Berikut ini merupakan tahapan-tahapan yang dilakukan dalam mempersiapkan data sebelum dilakukan pemodelan.
 
-*   Menghilangkan _Outliers_
+*   Menghilangkan _Missing Value_
 
-    Pada masing-masing fitur, dilakukan pengecekan dengan cara menghitung jumlah kemunculan setiap nilai unik dalam masing-masing fitur. Untuk fitur 'City', 'Furnishing Status' dan 'Tenant Preferred' telah menghasilkan distribusi yang merata dari setiap nilai uniknya. Namun, untuk fitur 'Area Type' dan 'Point of Contact' rupanya memiliki persebaran data yang kurang merata.
-    
-    Fitur 'Area Type' memiliki tiga kategori nilai unik, yaitu 'Super Area', 'Carpet Area' dan 'Build Area'. Ketika dilakukan pengecekan jumlah kemunculan setiap nilai unik dalam fitur 'Area Type', keluaran yang dihasilkan menunjukkan bahwa sebanyak 2446 data memiliki kategori 'Super Area', 2298 data memiliki kategori 'Carpet Area' dan 2 data memiliki kategori 'Built Area'. Dikarenakan kategori 'Built Area' hanya terdiri dari 2 data , hal ini dianggap sebagai _outlier_ yang tidak mewakili data sebenarnya dan mengganggu konsistensi analisis, sehingga data dengan kategori 'Built Area' akan dihapus supaya model yang dibangun dapat memberikan hasil yang lebih optimal.
-
-    Fitur 'Point of Contact' memiliki tiga kategori nilai unik, yaitu 'Contact Agent', 'Contact Owner' dan 'Contact Builder'. Ketika dilakukan pengecekan jumlah kemunculan setiap nilai unik dalam fitur 'Point of Contact', keluaran yang dihasilkan menunjukkan bahwa sebanyak 1529 data memiliki kategori 'Contact Agent', 3216 data memiliki kategori 'Contact Owner' dan 1 data memiliki kategori 'Contact Builder'. Dikarenakan kategori 'Contact Builder' hanya terdiri dari 1 data , hal ini dianggap sebagai _outlier_ yang tidak mewakili data sebenarnya dan mengganggu konsistensi analisis, sehingga data dengan kategori 'Contact Builder' akan dihapus supaya model yang dibangun dapat memberikan hasil yang lebih optimal. 
+    Setelah dilakukan proses penggabungan data, pasti akan ditemukan _missing value_ akibat data yang digabungkan terdiri dari banyak data. 
 
 *   _One Hot Encoding_
   
