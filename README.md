@@ -152,7 +152,9 @@ $$ P = \frac {Rekomendasi yang relevan} {Jumlah item yang direkomendasikan} $$
 Jika diterapkan pada hasil dari top-5 rekomendasi film yang dihasilkan oleh metode _Content Based Filtering_, maka hasil _precision_-nya adalah sebagai berikut :
 
 $$ P = \frac {Rekomendasi yang relevan} {Jumlah item yang direkomendasikan} $$
+
 $$ P = \frac {5} {5} $$
+
 $$ P = 1 $$
 
 Sehingga dapat disimpulkan bahwa sistem rekomendasi dengan menggunakan metode _Content Based Filtering_ menghasilkan hasil keluaran dengan kecocokan yang tinggi, karena hasil perhitungan _precision_-nya sama dengan 1.
