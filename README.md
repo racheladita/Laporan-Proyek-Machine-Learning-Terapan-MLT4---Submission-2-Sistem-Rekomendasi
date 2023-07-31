@@ -110,6 +110,21 @@ Seperti yang telah dijelaskan pada bagian sebelumnya, pada penelitian ini akan d
    Kelebihan dari metode _Content Based Filtering_ antara lain tidak memerlukan data dari pengguna lain, sehingga dapat memberikan rekomendasi untuk pengguna baru (_cold-start problem_), rekomendasi bersifat personal dan sesuai dengan preferensi individual pengguna, karena model memperhatikan riwayat penilaian pengguna, serta mampu merekomendasikan film yang kurang populer atau tidak dikenal, karena model tidak hanya mengandalkan popularitas film namun mencoba memahami minat pengguna terhadap preferensi suatu film.
 
    Sedangkan kekurangan metode _Content Based Filtering_ antara lain terbatas dalam mengidentifikasi film baru yang belum pernah dinilai oleh pengguna, karena bergantung pada atribut film yang telah dikenali dan rentan terhadap _overfitting_ jika fitur-fitur yang digunakan tidak cukup representatif atau terlalu spesifik.
+
+   Pada penelitian ini, sistem rekomendasi yang telah berhasil dibangun menggunakan metode _Content Based Filtering_ akan diuji untuk mendapatkan rekomendasi film yang mirip dengan Star Wars: Episode III - Revenge of the Sith.
+
+   ![image](https://github.com/racheladita/Laporan-Proyek-Machine-Learning-Terapan-MLT4---Submission-2-Sistem-Rekomendasi/assets/77524477/791a9c86-24cc-471c-abf4-f70bb516d3e3)
+
+   Gambar 1. Contoh data uji, yaitu film Star Wars: Episode III - Revenge of the Sith
+   
+   Berikut ini merupakan hasil dari top-5 rekomendasi film yang mirip dengan film Star Wars: Episode III - Revenge of the Sith.
+
+   ![image](https://github.com/racheladita/Laporan-Proyek-Machine-Learning-Terapan-MLT4---Submission-2-Sistem-Rekomendasi/assets/77524477/8cfccec9-72a5-4ad8-95ce-a16779f667ca)
+
+   Gambar 2. Hasil dari top-5 rekomendasi film yang mirip dengan film Star Wars: Episode III - Revenge of the Sith
+
+   Dari Gambar 2 dapat dilihat bahwa film dengan _genre_ antara 'Action', 'Adventure' atau 'Sci-Fi' menjadi film yang direkomendasikan oleh sistem. Hal ini didasarkan pada data uji pada Gambar 1 yang dianggap sebagai film yang pernah ditonton atau disukai oleh seorang penonton/pengguna di masa lalu.
+
    
 *  _Collaborative Filtering_
   
