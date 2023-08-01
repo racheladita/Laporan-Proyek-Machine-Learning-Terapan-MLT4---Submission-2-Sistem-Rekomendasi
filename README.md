@@ -130,7 +130,13 @@ Sedangkan berikut ini merupakan tahapan-tahapan yang dilakukan dalam mempersiapk
     
 *   Melakukan Proses _Encoding_
 
-    Fitur 'user' dan 'movieId' perlu di-_encode_ menjadi indeks bilangan bulat (_integer_) agar dapat digunakan dalam model _Collaborative Filtering_. Indeks ini memudahkan proses perhitungan dalam model dan menghindari kesalahan saat melakukan perbandingan.
+    Encoding adalah proses mengubah data dari satu bentuk ke bentuk lain yang lebih sesuai untuk digunakan dalam suatu model atau algoritma [5]. Dalam _Collaborative Filtering_, _encoding_ diperlukan untuk mengubah data kategorikal, seperti nama pengguna ('user') atau ID film ('movieId') menjadi bentuk numerik (indeks bilangan bulat) sehingga dapat diolah oleh model. Indeks ini memudahkan proses perhitungan dalam model dan menghindari kesalahan saat melakukan perbandingan. Berikut ini merupakan contoh proses _encoding_ untuk fitur 'user' :
+
+    * Untuk setiap nilai unik yang terdapat dalam fitur 'user' akan diubah menjadi indeks bilangan bulat.
+    * Misalnya terdapat 5 data pengguna dalam suatu _list_ seperti berikut : ['UserA', 'UserB', 'UserC', 'UserA', 'UserB']
+    * Maka proses _encoding_ akan mengubahnya menjadi [0, 1, 2, 0, 1]
+    
+    Dapat dilihat bahwa 'UserA' di-_encode_ menjadi bilangan bulat dengan indeks 0, 'UserB' diubah menjadi bilangan bulat dengan indeks 1, dan 'UserC' diubah menjadi bilangan bulat dengan indeks 2. Proses _encoding_ ini akan membantu menghindari kesalahan saat melakukan perbandingan dan juga memudahkan perhitungan dalam model _Collaborative Filtering_. 
     
 *   Memetakan ‘userId’ dan ‘movieId’ ke _Dataframe_ yang Berkaitan.
 
@@ -188,7 +194,7 @@ Seperti yang telah dijelaskan pada bagian sebelumnya, pada penelitian ini akan d
 
 # **_Evaluation_**
 
-Pada penelitian ini, proses evaluasi dilakukan dengan menggunakan _precision_ dan metrik evaluasi dengan matplotlib. _Precision_ adalah kecocokan antara bagian data yang diambil dengan informasi yang dibutuhkan [5]. Pada penelitian ini, _precision_ digunakan untuk mengevaluasi metode _Content Based Filtering_. Sedangkan metrik evaluasi dengan matplotlib digunakan untuk mengevaluasi metode _Collaborative Filtering_.  
+Pada penelitian ini, proses evaluasi dilakukan dengan menggunakan _precision_ dan metrik evaluasi dengan matplotlib. _Precision_ adalah kecocokan antara bagian data yang diambil dengan informasi yang dibutuhkan [6]. Pada penelitian ini, _precision_ digunakan untuk mengevaluasi metode _Content Based Filtering_. Sedangkan metrik evaluasi dengan matplotlib digunakan untuk mengevaluasi metode _Collaborative Filtering_.  
 
 _Precision_ didefinisikan dalam persamaan berikut :
 
@@ -229,4 +235,6 @@ Service,” _Jesya Jurnal Ekonomi & Ekonomi Syariah_, vol. 6, no. 1, Jan. 2023, 
 
 [4]   Binus University Graduate Program. “Teknik pre-processing dan classification dalam data science,”. Tersedia: [tautan](https://mie.binus.ac.id/2022/08/26/teknik-pre-processing-dan-classification-dalam-data-science/). Diakses pada 31 Juli 2023.
 
-[5] E-Jurnal UAJY. Tersedia: [tautan](http://e-journal.uajy.ac.id/11794/4/TF070093.pdf). Diakses pada 31 Juli 2023.
+[5] E-Prints UNY. Tersedia: [tautan](http://eprints.uny.ac.id/54926/3/BAB%202.pdf). Diakses pada 31 Juli 2023.
+
+[6] E-Jurnal UAJY. Tersedia: [tautan](http://e-journal.uajy.ac.id/11794/4/TF070093.pdf). Diakses pada 31 Juli 2023.
