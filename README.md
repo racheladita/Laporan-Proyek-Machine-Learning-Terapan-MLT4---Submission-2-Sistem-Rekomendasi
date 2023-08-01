@@ -164,9 +164,11 @@ Seperti yang telah dijelaskan pada bagian sebelumnya, pada penelitian ini akan d
 
    Pada penelitian ini, sistem rekomendasi yang telah berhasil dibangun menggunakan metode _Content Based Filtering_ akan diuji untuk mendapatkan rekomendasi film yang mirip dengan Star Wars: Episode III - Revenge of the Sith.
 
-   ![image](https://github.com/racheladita/Laporan-Proyek-Machine-Learning-Terapan-MLT4---Submission-2-Sistem-Rekomendasi/assets/77524477/791a9c86-24cc-471c-abf4-f70bb516d3e3)
-
-   Gambar 1. Contoh data uji, yaitu film Star Wars: Episode III - Revenge of the Sith
+   |         |     id     |     movie_name     |   genre  |
+   |---------|----------------|-----------------|-----------|
+   |  1299  | 33493  |  Star Wars: Episode III - Revenge of the Sith (2005)  |  Action|Adventure|Sci-Fi |
+  
+   Tabel 4. Contoh data uji, yaitu film Star Wars: Episode III - Revenge of the Sith
    
    Berikut ini merupakan hasil dari top-5 rekomendasi film yang mirip dengan film Star Wars: Episode III - Revenge of the Sith.
 
