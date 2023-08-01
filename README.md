@@ -164,19 +164,25 @@ Seperti yang telah dijelaskan pada bagian sebelumnya, pada penelitian ini akan d
 
    Pada penelitian ini, sistem rekomendasi yang telah berhasil dibangun menggunakan metode _Content Based Filtering_ akan diuji untuk mendapatkan rekomendasi film yang mirip dengan Star Wars: Episode III - Revenge of the Sith.
 
-   |         |     id     |     movie_name     |   genre  |
-   |---------|----------------|-----------------|-----------|
-   |  1299  | 33493  |  Star Wars: Episode III - Revenge of the Sith (2005)  |  Action|Adventure|Sci-Fi |
+   |        |   id   |                       movie_name                      |          genre          |
+   |--------|--------|-------------------------------------------------------|-------------------------|
+   |  1299  | 33493  |  Star Wars: Episode III - Revenge of the Sith (2005)  | Action|Adventure|Sci-Fi |
   
    Tabel 4. Contoh data uji, yaitu film Star Wars: Episode III - Revenge of the Sith
    
    Berikut ini merupakan hasil dari top-5 rekomendasi film yang mirip dengan film Star Wars: Episode III - Revenge of the Sith.
 
-   ![image](https://github.com/racheladita/Laporan-Proyek-Machine-Learning-Terapan-MLT4---Submission-2-Sistem-Rekomendasi/assets/77524477/8cfccec9-72a5-4ad8-95ce-a16779f667ca)
+   |     |                       movie_name                   |          genre          |
+   |-----|----------------------------------------------------|-------------------------|
+   |  0  |  Star Wars: Episode I - The Phantom Menace (1999)  | Action|Adventure|Sci-Fi |
+   |  1  |  Fantastic Four (2005)                             | Action|Adventure|Sci-Fi |
+   |  2  |  Serenity (2005)                                   | Action|Adventure|Sci-Fi |
+   |  3  |  Star Wars: Episode IV - A New Hope (1977)         | Action|Adventure|Sci-Fi |
+   |  4  |  Superman (1978)                                   | Action|Adventure|Sci-Fi |
 
-   Gambar 2. Hasil dari top-5 rekomendasi film yang mirip dengan film Star Wars: Episode III - Revenge of the Sith
+   Tabel 5. Hasil dari top-5 rekomendasi film yang mirip dengan film Star Wars: Episode III - Revenge of the Sith
 
-   Dari Gambar 2 dapat dilihat bahwa film dengan _genre_ antara 'Action', 'Adventure' atau 'Sci-Fi' menjadi film yang direkomendasikan oleh sistem. Hal ini didasarkan pada _genre_ film data uji pada Gambar 1 yang dianggap sebagai film yang pernah ditonton atau disukai oleh seorang penonton/pengguna di masa lalu.
+   Dari Tabel 5 dapat dilihat bahwa film dengan _genre_ antara 'Action', 'Adventure' atau 'Sci-Fi' menjadi film yang direkomendasikan oleh sistem. Hal ini didasarkan pada _genre_ film data uji pada Tabel 4 yang dianggap sebagai film yang pernah ditonton atau disukai oleh seorang penonton/pengguna di masa lalu.
    
 *  _Collaborative Filtering_
   
@@ -190,9 +196,9 @@ Seperti yang telah dijelaskan pada bagian sebelumnya, pada penelitian ini akan d
 
    ![image](https://github.com/racheladita/Laporan-Proyek-Machine-Learning-Terapan-MLT4---Submission-2-Sistem-Rekomendasi/assets/77524477/f7662449-7804-4c06-9ced-0ab6ab67e714)
 
-   Gambar 3. Hasil dari top-10 rekomendasi film yang mengandalkan pendapat dari pengguna lain
+   Gambar 1. Hasil dari top-10 rekomendasi film yang mengandalkan pendapat dari pengguna lain
 
-   Dari Gambar 3 dapat dilihat bahwa film dengan _genre_ drama menjadi film yang paling tinggi _rating_-nya. Selanjutnya, sistem memberikan top-10 rekomendasi film dengan mayoritas _genre_-nya adalah drama. Dapat dilihat bahwa dari 10 rekomendasi film, 7 diantaranya merupakan film dengan _genre_ drama, sehingga hasil ini sesuai dengan _rating genre_ film tertinggi yang telah dinilai oleh pengguna lain.
+   Dari Gambar 1 dapat dilihat bahwa film dengan _genre_ drama menjadi film yang paling tinggi _rating_-nya. Selanjutnya, sistem memberikan top-10 rekomendasi film dengan mayoritas _genre_-nya adalah drama. Dapat dilihat bahwa dari 10 rekomendasi film, 7 diantaranya merupakan film dengan _genre_ drama, sehingga hasil ini sesuai dengan _rating genre_ film tertinggi yang telah dinilai oleh pengguna lain.
 
 # **_Evaluation_**
 
@@ -212,13 +218,13 @@ $$ P = 1 $$
 
 Sehingga dapat disimpulkan bahwa sistem rekomendasi dengan menggunakan metode _Content Based Filtering_ menghasilkan hasil keluaran dengan kecocokan yang tinggi, karena hasil perhitungan _precision_-nya sama dengan 1.
 
-Sedangkan hasil dari metrik evaluasi untuk metode _Collaborative Filtering_ yang menggunakan grafik dari matplotlib, dapat dilihat pada Gambar 4. 
+Sedangkan hasil dari metrik evaluasi untuk metode _Collaborative Filtering_ yang menggunakan grafik dari matplotlib, dapat dilihat pada Gambar 2. 
 
-![image](https://github.com/racheladita/Laporan-Proyek-Machine-Learning-Terapan-MLT4---Submission-2-Sistem-Rekomendasi/assets/77524477/bcdccfab-1e64-4ff4-b20d-72d70aa7e572)
+![image](https://github.com/racheladita/Laporan-Proyek-Machine-Learning-Terapan-MLT4---Submission-2-Sistem-Rekomendasi/assets/77524477/e7da2798-1410-4778-830f-6af870513eaf)
 
-Gambar 4. Metrik evaluasi untuk metode _Collaborative Filtering_
+Gambar 2. Metrik evaluasi untuk metode _Collaborative Filtering_
 
-Dari Gambar 4 dapat dilihat bahwa proses pelatihan model cukup _smooth_ dan model konvergen pada _epochs_ sekitar 40. Dari proses ini, diperoleh nilai _error_ akhir sebesar 0.1764 dan nilai _error_ pada data validasi sebesar 0.2040. Nilai tersebut cukup bagus untuk sebuah sistem rekomendasi. 
+Dari Gambar 2 dapat dilihat bahwa proses pelatihan model cukup _smooth_ dan model konvergen pada _epochs_ sekitar 20. Dari proses ini, diperoleh nilai _error_ akhir sebesar 0.1764 dan nilai _error_ pada data validasi sebesar 0.2040. Nilai tersebut cukup bagus untuk sebuah sistem rekomendasi. 
 
 # **Kesimpulan**
 
