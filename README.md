@@ -57,9 +57,54 @@ Penelitian ini bertujuan untuk mengembangkan sistem rekomendasi film yang efekti
   3.  ratings.csv : _file_ ini berisi daftar variabel penilaian yang diberikan oleh pengguna untuk suatu film yang berjumlah 100836 data.
   4.  tags.csv : _file_ ini berisi daftar variabel kata kunci dari masing-masing film yang tersedia yang berjumlah 1572 data unik.
       
-  Tahapan selanjutnya adalah melakukan eksplorasi terhadap data dengan teknik _univariate exploratory data analysis_. Tahap eksplorasi penting untuk dilakukan karena bertujuan untuk memahami variabel-variabel yang terdapat pada data beserta korelasi antar variabelnya [3]. Analisis data _univariate_ dilakukan dengan mengeksplorasi data yang melibatkan penelitian lebih lanjut tentang setiap variabel secara terpisah. Pada tahapan ini, akan dilakukan eksplorasi data terhadap seluruh variabel yang telah disebutkan sebelumnnya, yaitu variabel 'links', 'movies', 'tags' dan juga 'ratings'.
+  Tahapan selanjutnya adalah melakukan eksplorasi terhadap data dengan teknik _univariate exploratory data analysis_. Tahap eksplorasi penting untuk dilakukan karena bertujuan untuk memahami variabel-variabel yang terdapat pada data beserta korelasi antar variabelnya [3]. Analisis data _univariate_ dilakukan dengan mengeksplorasi data yang melibatkan penelitian lebih lanjut tentang setiap variabel secara terpisah. Pada tahapan ini, akan dilakukan eksplorasi data terhadap seluruh variabel yang telah disebutkan sebelumnnya, yaitu variabel 'links', 'movies', 'tags' dan juga 'ratings' dengan menggunakan fungsi info(), head() dan describe(). Tabel 1 akan menampilkan contoh hasil keluaran dari eksplorasi data dengan menggunakan fungsi info(). Tabel 2 akan menampilkan contoh hasil keluaran dari eksplorasi data dengan menggunakan fungsi head(). Sedangkan Tabel 3 akan menampilkan contoh hasil keluaran dari eksplorasi data dengan menggunakan fungsi describe().
 
-  Selain itu, proses yang tidak kalah penting untuk dilakukan, yaitu melakukan _pre-processing_ terhadap data sebelum diolah ke tahapan selanjutnya. Tahapan _pre-processing_ data bertujuan untuk membersihkan, mengubah, atau mengorganisasi data agar siap untuk tahap pemodelan [4]. Pada penelitian ini, _pre-processing_ data diawali dengan melakukan penggabungan seluruh data pada seluruh variabel dengan mengkorelasikan tiap-tiap data pada masing-masing variabel dengan menggunakan kolom 'movieId' yang unik untuk kategori 'movie' dan menggunakan kolom 'userId' yang unik untuk kategori 'user' sebagai acuan dalam penggabungan ini. Kemudian, data yang sama (data duplikat) akan dihapus agar data yang terdapat pada masing-masing kategori ('movie' dan 'user') bersifat unik.
+  |  #  |  Column   |  Non-Null Count |  Dtype  |
+  |-----|-----------|-----------------|---------|
+  |  0  |  movieId  |  9742 non-null  |  int64  |
+  |  1  |  title    |  9742 non-null  |  object |
+  |  2  |  genres   |  9742 non-null  |  object |
+
+  Tabel 1. Hasil keluaran dari movies.info()
+
+  Fungsi info() akan menampilkan informasi detail tentang _dataframe_, seperti jumlah baris data, nama-nama kolom beserta jumlah data dan tipe datanya, dan sebagainya. Dari Tabel 1, dapat dilihat bahwa variabel 'movies' memiliki tiga fitur, yaitu 'movieId' yang memiliki tipe data _integer_, 'title' yang memiliki tipe data _object_ dan 'genres' yang memiliki tipe data _object_. Masing-masing fitur memiliki 9742 baris data yang tidak kosong (_non-null_).
+
+  |     |  movieId  |  imdbId  |  tmdbId  |
+  |-----|-----------|----------|----------|
+  |  0  |     1     |  114709  |  862.0   |
+  |  1  |     2     |  113497  |  8844.0  |
+  |  2  |     3     |  113228  |  15602.0 |
+  |  3  |     4     |  114885  |  31357.0 |
+  |  4  |     5     |  113041  |  11862.0 |
+
+  Tabel 2. Hasil keluaran dari links.head()
+
+  Fungsi head() akan menampilkan 5 baris pertama dari suatu _dataframe_. Dari Tabel 2, dapat dilihat bahwa variabel 'links' menampilkan lima baris datanya. Selain itu, informasi lain yang dapat diambil adalah variabel 'links' memiliki tiga fitur, yaitu 'movieId', 'imdbId' dan 'tmdbId'.
+
+  |         |     userId     |     movieId     |   rating  |    timestamp   |
+  |---------|----------------|-----------------|-----------|----------------|
+  |  count  | 100836.000000  |  100836.000000  |  100836.0 |  1.008360e+05  |
+  |  mean   |    326.127564  |   19435.295718  |  3.501557 |  1.205946e+09  |
+  |  std    |    182.618491  |   35530.987199  |  1.042529 |  2.162610e+08  |
+  |  min    |      1.000000  |       1.000000  |  0.500000 |  8.281246e+08  |
+  |  25%    |    177.000000  |    1199.000000  |  3.000000 |  1.019124e+09  |
+  |  50%    |    325.000000  |    2991.000000  |  3.500000 |  1.186087e+09  |
+  |  75%    |    477.000000  |    8122.000000  |  4.000000 |  1.435994e+09  |
+  |  max    |    610.000000  |  193609.000000  |  5.000000 |  1.537799e+09  |
+
+  Tabel 3. Hasil keluaran dari ratings.describe()
+
+  Fungsi describe() akan menghasilkan data statistik deskriptif dalam _dataframe_ dengan merangkum tendensi sentral dan penyebaran dataset, sehingga didapatkan gambaran umum singkat tentang kumpulan data. Tabel 3 menampilkan data statistik deskriptif dari variabel 'ratings', sebagai contoh, nilai minimal dari ulasan yang diberikan pengguna adalah 0.5. Sedangkan nilai maksimal dari ulasan yang diberikan pengguna adalah 5.0.
+
+  Selain itu, proses yang tidak kalah penting untuk dilakukan, yaitu melakukan _pre-processing_ terhadap data sebelum diolah ke tahapan selanjutnya. Tahapan _pre-processing_ data bertujuan untuk membersihkan, mengubah, atau mengorganisasi data agar siap untuk tahap pemodelan [4]. Pada penelitian ini, _pre-processing_ data diawali dengan melakukan penggabungan seluruh data pada seluruh variabel dengan mengkorelasikan tiap-tiap data pada masing-masing variabel dengan menggunakan kolom 'movieId' yang unik untuk kategori 'movie' dan menggunakan kolom 'userId' yang unik untuk kategori 'user' sebagai acuan dalam penggabungan ini. Kemudian, data yang sama (data duplikat) akan dihapus agar data yang terdapat pada masing-masing kategori ('movie' dan 'user') bersifat unik. Berikut merupakan tahapan-tahapan dalam melakukan _pre-processing_ data :
+
+  * Menggabungkan seluruh 'movieId' pada kategori 'movie', mengurutkan data dan menghapus data yang sama
+  * Menggabungkan seluruh 'userId', menghapus data yang sama dan kemudian mengurutkannya
+  * Menggabungkan *file* 'links', 'movies' dan 'tags' ke dalam *dataframe* movie_info. Lalu, menggabungkan *dataframe* 'ratings' dengan movie_info berdasarkan nilai 'movieId'
+  * Melakukan pengecekan *missing value* dengan fungsi isnull()
+  * Mendefinisikan *dataframe* 'ratings' ke dalam variabel all_movie_rate
+  * Menggabungkan all movie_rate dengan *dataframe* 'movies' berdasarkan 'movieId'. Lalu, print *dataframe* all_movie_name untuk melihat hasilnya
+  * Menggabungkan *dataframe* 'tags' dengan all_movie_name dan memasukkannya ke dalam variabel all_movie
 
 # **_Data Preparation_**
 
