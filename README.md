@@ -224,7 +224,7 @@ Sedangkan hasil dari metrik evaluasi untuk metode _Collaborative Filtering_ yang
 
 Gambar 2. Metrik evaluasi untuk metode _Collaborative Filtering_
 
-Dari Gambar 2 dapat dilihat bahwa proses pelatihan model cukup _smooth_ dan model konvergen pada _epochs_ sekitar 20. Dari proses ini, diperoleh nilai _error_ akhir sebesar 0.1764 dan nilai _error_ pada data validasi sebesar 0.2040. Nilai tersebut cukup bagus untuk sebuah sistem rekomendasi. 
+Dari proses ini, diperoleh nilai _error_ akhir sebesar 0.1794 dan nilai _error_ pada data validasi sebesar 0.1993 dengan menggunakan _epochs_ = 20. Nilai tersebut cukup bagus untuk sebuah sistem rekomendasi. Dari Gambar 2 dapat dilihat bahwa proses pelatihan model cukup _smooth_ dan model konvergen, sehingga dapat disimpulkan bahwa data grafik plot masuk ke dalam kategori _goodfit_. 
 
 # **Kesimpulan**
 
