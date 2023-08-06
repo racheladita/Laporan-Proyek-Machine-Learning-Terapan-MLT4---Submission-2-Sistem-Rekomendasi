@@ -72,7 +72,7 @@ Penelitian ini bertujuan untuk mengembangkan sistem rekomendasi film yang efekti
 
        * 'userId' : Nomor unik yang merupakan identifikasi untuk masing-masing pengguna dalam dataset.
        * 'movieId' : Nomor unik yang merupakan identifikasi untuk masing-masing film dalam dataset.
-       * 'tag' : Kata kunci atau tag yang diberikan oleh pengguna untuk suatu film.
+       * 'tag' : Kata kunci atau _tag_ yang diberikan oleh pengguna untuk suatu film.
 
 # **_Data Understanding_**
 
