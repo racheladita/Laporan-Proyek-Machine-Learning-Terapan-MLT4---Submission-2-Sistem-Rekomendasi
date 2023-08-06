@@ -196,14 +196,14 @@ Seperti yang telah dijelaskan pada bagian sebelumnya, pada penelitian ini akan d
    
    |                 movie_name                 |         genre          |
    |--------------------------------------------|------------------------|
-   |  Green Mile, The (1999)                    |  Crime'\|'Drama           |
+   |  Green Mile, The (1999)                    |  Crime\|Drama           |
    |  Whiplash (2014)                           |  Drama                 |
 
    Tabel 6. Film dengan penilaian tertinggi yang diperoleh dari penilain pengguna dengan _ID_ 47
 
    |                 movie_name                 |         genre          |
    |--------------------------------------------|------------------------|
-   |  Paths of Glory (1957)                     |  Drama'\|'War             |
+   |  Paths of Glory (1957)                     |  Drama\|War             |
    |  Guess Who's Coming to Dinner (1967)       |  Drama                 |
    |  Two Family House (2000)                   |  Drama                 |
    |  Hope and Glory (1987)                     |  Drama                 |
