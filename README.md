@@ -194,48 +194,35 @@ Seperti yang telah dijelaskan pada bagian sebelumnya, pada penelitian ini akan d
 
    Pada penelitian ini, sistem rekomendasi yang telah berhasil dibangun menggunakan metode _Collaborative Filtering_ akan diuji untuk mendapatkan rekomendasi film untuk seorang pengguna dimana hasil rekomendasi merupakan rekomendasi yang mengandalkan pendapat dari pengguna lain.
 
-   ================================================================================
    Showing recommendations for users: 47                                      
-   ================================================================================
+   =======================================================================
    Movie with high ratings from user
-   ================================================================================
+   =======================================================================
    
-   |                       movie_name                   |          genre          |
-   |----------------------------------------------------|-------------------------|
-   |  Green Mile, The (1999)                            | Crime|Drama             |
-   |  Whiplash (2014)                                   | Drama                   |
+   |                 movie_name                 |         genre          |
+   |--------------------------------------------|------------------------|
+   |  Green Mile, The (1999)                    |  Crime|Drama           |
+   |  Whiplash (2014)                           |  Drama                 |
 
-   ================================================================================
    Top 10 movie recommendation
-   ================================================================================
+   =======================================================================
 
-   |                       movie_name                   |          genre          |
-   |----------------------------------------------------|-------------------------|
-   |  Star Wars: Episode I - The Phantom Menace (1999)  | Action|Adventure|Sci-Fi |
-   |  Fantastic Four (2005)                             | Action|Adventure|Sci-Fi |
-   |  Serenity (2005)                                   | Action|Adventure|Sci-Fi |
-   |  Star Wars: Episode IV - A New Hope (1977)         | Action|Adventure|Sci-Fi |
-   |  Superman (1978)                                   | Action|Adventure|Sci-Fi |
+   |                 movie_name                 |         genre          |
+   |--------------------------------------------|------------------------|
+   |  Paths of Glory (1957)                     |  Drama|War             |
+   |  Guess Who's Coming to Dinner (1967)       |  Drama                 |
+   |  Two Family House (2000)                   |  Drama                 |
+   |  Hope and Glory (1987)                     |  Drama                 |
+   |  Lady Jane (1986)                          |  Drama|Romance         |
+   |  Awful Truth, The (1937)                   |  Comedy|Romance        |
+   |  Come and See (Idi i smotri) (1985)        |  Drama|War             |
+   |  Adam's Rib (1949)                         |  Comedy|Romance        |
+   |  Safety Last! (1923)                       |  Action|Comedy|Romance |
+   |  Reefer Madness: The Movie Musical (2005)  |  Comedy|Drama|Musical  |
 
    
-===========================
 
---------------------------------
- : 
-Whiplash (2014) : Drama
---------------------------------
 
---------------------------------
-Paths of Glory (1957) : Drama|War
-Guess Who's Coming to Dinner (1967) : Drama
-Two Family House (2000) : Drama
-Hope and Glory (1987) : Drama
-Lady Jane (1986) : Drama|Romance
-Awful Truth, The (1937) : Comedy|Romance
-Come and See (Idi i smotri) (1985) : Drama|War
-Adam's Rib (1949) : Comedy|Romance
-Safety Last! (1923) : Action|Comedy|Romance
-Reefer Madness: The Movie Musical (2005) : Comedy|Drama|Musical
 
    ![image](https://github.com/racheladita/Laporan-Proyek-Machine-Learning-Terapan-MLT4---Submission-2-Sistem-Rekomendasi/assets/77524477/f7662449-7804-4c06-9ced-0ab6ab67e714)
 
