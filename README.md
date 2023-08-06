@@ -194,12 +194,21 @@ Seperti yang telah dijelaskan pada bagian sebelumnya, pada penelitian ini akan d
 
    Pada penelitian ini, sistem rekomendasi yang telah berhasil dibangun menggunakan metode _Collaborative Filtering_ akan diuji untuk mendapatkan rekomendasi film untuk seorang pengguna dimana hasil rekomendasi merupakan rekomendasi yang mengandalkan pendapat dari pengguna lain.
 
-   |  Showing recommendations for users: 47                                      ||
-   |=============================================================================||
-   |  Movie with high ratings from user                                          ||
-   |-----------------------------------------------------------------------------||
-   |  Green Mile, The (1999)                            | Crime|Drama             |
+   ================================================================================
+   Showing recommendations for users: 47                                      
+   ================================================================================
+   Movie with high ratings from user
+   ================================================================================
+   
+   |                       movie_name                   |          genre          |
    |----------------------------------------------------|-------------------------|
+   |  Green Mile, The (1999)                            | Crime|Drama             |
+   |  Whiplash (2014)                                   | Drama                   |
+
+   ================================================================================
+   Top 10 movie recommendation
+   ================================================================================
+
    |                       movie_name                   |          genre          |
    |----------------------------------------------------|-------------------------|
    |  Star Wars: Episode I - The Phantom Menace (1999)  | Action|Adventure|Sci-Fi |
@@ -215,7 +224,7 @@ Seperti yang telah dijelaskan pada bagian sebelumnya, pada penelitian ini akan d
  : 
 Whiplash (2014) : Drama
 --------------------------------
-Top 10 movie recommendation
+
 --------------------------------
 Paths of Glory (1957) : Drama|War
 Guess Who's Coming to Dinner (1967) : Drama
