@@ -164,21 +164,21 @@ Seperti yang telah dijelaskan pada bagian sebelumnya, pada penelitian ini akan d
 
    Pada penelitian ini, sistem rekomendasi yang telah berhasil dibangun menggunakan metode _Content Based Filtering_ akan diuji untuk mendapatkan rekomendasi film yang mirip dengan Star Wars: Episode III - Revenge of the Sith.
 
-   |        |   id   |                       movie_name                      |          genre          |
-   |--------|--------|-------------------------------------------------------|-------------------------|
-   |  1299  | 33493  |  Star Wars: Episode III - Revenge of the Sith (2005)  | Action|Adventure|Sci-Fi |
+   |        |   id   |                       movie_name                      |             genre             |
+   |--------|--------|-------------------------------------------------------|-------------------------------|
+   |  1299  | 33493  |  Star Wars: Episode III - Revenge of the Sith (2005)  | Action \| Adventure \| Sci-Fi |
   
    Tabel 4. Contoh data uji, yaitu film Star Wars: Episode III - Revenge of the Sith
    
    Berikut ini merupakan hasil dari top-5 rekomendasi film yang mirip dengan film Star Wars: Episode III - Revenge of the Sith.
 
-   |     |                       movie_name                   |          genre          |
-   |-----|----------------------------------------------------|-------------------------|
-   |  0  |  Star Wars: Episode I - The Phantom Menace (1999)  | Action|Adventure|Sci-Fi |
-   |  1  |  Fantastic Four (2005)                             | Action|Adventure|Sci-Fi |
-   |  2  |  Serenity (2005)                                   | Action|Adventure|Sci-Fi |
-   |  3  |  Star Wars: Episode IV - A New Hope (1977)         | Action|Adventure|Sci-Fi |
-   |  4  |  Superman (1978)                                   | Action|Adventure|Sci-Fi |
+   |     |                       movie_name                   |             genre             |
+   |-----|----------------------------------------------------|-------------------------------|
+   |  0  |  Star Wars: Episode I - The Phantom Menace (1999)  | Action \| Adventure \| Sci-Fi |
+   |  1  |  Fantastic Four (2005)                             | Action \| Adventure \| Sci-Fi |
+   |  2  |  Serenity (2005)                                   | Action \| Adventure \| Sci-Fi |
+   |  3  |  Star Wars: Episode IV - A New Hope (1977)         | Action \| Adventure \| Sci-Fi |
+   |  4  |  Superman (1978)                                   | Action \| Adventure \| Sci-Fi |
 
    Tabel 5. Hasil dari top-5 rekomendasi film yang mirip dengan film Star Wars: Episode III - Revenge of the Sith
 
@@ -196,23 +196,23 @@ Seperti yang telah dijelaskan pada bagian sebelumnya, pada penelitian ini akan d
    
    |                 movie_name                 |         genre          |
    |--------------------------------------------|------------------------|
-   |  Green Mile, The (1999)                    |  Crime\|Drama           |
+   |  Green Mile, The (1999)                    |  Crime \| Drama        |
    |  Whiplash (2014)                           |  Drama                 |
 
    Tabel 6. Film dengan penilaian tertinggi yang diperoleh dari penilain pengguna dengan _ID_ 47
 
-   |                 movie_name                 |         genre          |
-   |--------------------------------------------|------------------------|
-   |  Paths of Glory (1957)                     |  Drama\|War             |
-   |  Guess Who's Coming to Dinner (1967)       |  Drama                 |
-   |  Two Family House (2000)                   |  Drama                 |
-   |  Hope and Glory (1987)                     |  Drama                 |
-   |  Lady Jane (1986)                          |  Drama'\|'Romance         |
-   |  Awful Truth, The (1937)                   |  Comedy'\|'Romance        |
-   |  Come and See (Idi i smotri) (1985)        |  Drama'\|'War             |
-   |  Adam's Rib (1949)                         |  Comedy'\|'Romance        |
-   |  Safety Last! (1923)                       |  Action'\|'Comedy'\|'Romance |
-   |  Reefer Madness: The Movie Musical (2005)  |  Comedy'\|'Drama'\|'Musical  |
+   |                 movie_name                 |            genre             |
+   |--------------------------------------------|------------------------------|
+   |  Paths of Glory (1957)                     |  Drama \| War                |
+   |  Guess Who's Coming to Dinner (1967)       |  Drama                       |
+   |  Two Family House (2000)                   |  Drama                       |
+   |  Hope and Glory (1987)                     |  Drama                       |
+   |  Lady Jane (1986)                          |  Drama \| Romance            |
+   |  Awful Truth, The (1937)                   |  Comedy \| Romance           | 
+   |  Come and See (Idi i smotri) (1985)        |  Drama \| War                |
+   |  Adam's Rib (1949)                         |  Comedy \| Romance           |
+   |  Safety Last! (1923)                       |  Action \| Comedy \| Romance |
+   |  Reefer Madness: The Movie Musical (2005)  |  Comedy \| Drama \| Musical  |
 
    Tabel 7. Hasil dari top-10 rekomendasi film yang mengandalkan pendapat dari pengguna lain (penilain pengguna dengan _ID_ 47)
 
