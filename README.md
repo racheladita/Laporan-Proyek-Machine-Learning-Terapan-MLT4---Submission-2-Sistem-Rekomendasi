@@ -222,6 +222,26 @@ Sedangkan hasil dari metrik evaluasi untuk metode _Collaborative Filtering_ yang
 
 ![image](https://github.com/racheladita/Laporan-Proyek-Machine-Learning-Terapan-MLT4---Submission-2-Sistem-Rekomendasi/assets/77524477/e7da2798-1410-4778-830f-6af870513eaf)
 
+Showing recommendations for users: 47
+===========================
+Movie with high ratings from user
+--------------------------------
+Green Mile, The (1999) : Crime|Drama
+Whiplash (2014) : Drama
+--------------------------------
+Top 10 movie recommendation
+--------------------------------
+Paths of Glory (1957) : Drama|War
+Guess Who's Coming to Dinner (1967) : Drama
+Two Family House (2000) : Drama
+Hope and Glory (1987) : Drama
+Lady Jane (1986) : Drama|Romance
+Awful Truth, The (1937) : Comedy|Romance
+Come and See (Idi i smotri) (1985) : Drama|War
+Adam's Rib (1949) : Comedy|Romance
+Safety Last! (1923) : Action|Comedy|Romance
+Reefer Madness: The Movie Musical (2005) : Comedy|Drama|Musical
+
 Gambar 2. Metrik evaluasi untuk metode _Collaborative Filtering_
 
 Dari proses ini, diperoleh nilai _error_ akhir sebesar 0.1794 dan nilai _error_ pada data validasi sebesar 0.1993 dengan menggunakan _epochs_ = 20. Nilai tersebut cukup bagus untuk sebuah sistem rekomendasi. MRSE yang mendekati nol menunjukkan bahwa selisih antara nilai prediksi model dengan nilai aktual sangat kecil [7]. Artinya, model berhasil memprediksi data uji dengan sangat baik. Selain itu, dari Gambar 2 dapat dilihat bahwa proses pelatihan model cukup _smooth_ dan model konvergen, sehingga dapat disimpulkan bahwa data grafik plot masuk ke dalam kategori _goodfit_. 
