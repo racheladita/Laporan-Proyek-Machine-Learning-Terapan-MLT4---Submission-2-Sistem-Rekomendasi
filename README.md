@@ -222,11 +222,23 @@ Sedangkan hasil dari metrik evaluasi untuk metode _Collaborative Filtering_ yang
 
 ![image](https://github.com/racheladita/Laporan-Proyek-Machine-Learning-Terapan-MLT4---Submission-2-Sistem-Rekomendasi/assets/77524477/e7da2798-1410-4778-830f-6af870513eaf)
 
-Showing recommendations for users: 47
+|  Showing recommendations for users : 47                                     ||
+|=============================================================================||
+|  Movie with high ratings from user                                          ||
+|-----------------------------------------------------------------------------||
+|                       movie_name                   |          genre          |
+|----------------------------------------------------|-------------------------|
+|  Green Mile, The (1999)                            | Crime|Drama             |
+|  Fantastic Four (2005)                             | Action|Adventure|Sci-Fi |
+|  Serenity (2005)                                   | Action|Adventure|Sci-Fi |
+|  Star Wars: Episode IV - A New Hope (1977)         | Action|Adventure|Sci-Fi |
+|  Superman (1978)                                   | Action|Adventure|Sci-Fi |
+
+
 ===========================
-Movie with high ratings from user
+
 --------------------------------
-Green Mile, The (1999) : Crime|Drama
+ : 
 Whiplash (2014) : Drama
 --------------------------------
 Top 10 movie recommendation
