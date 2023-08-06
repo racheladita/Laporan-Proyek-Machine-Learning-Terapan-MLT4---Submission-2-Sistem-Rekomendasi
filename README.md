@@ -199,7 +199,7 @@ Seperti yang telah dijelaskan pada bagian sebelumnya, pada penelitian ini akan d
    |  Green Mile, The (1999)                    |  Crime \| Drama        |
    |  Whiplash (2014)                           |  Drama                 |
 
-   Tabel 6. Film dengan penilaian tertinggi yang diperoleh dari penilain pengguna dengan _ID_ 47
+   Tabel 6. Film dengan _rating_ tertinggi yang diperoleh dari penilaian pengguna
 
    |                 movie_name                 |            genre             |
    |--------------------------------------------|------------------------------|
@@ -214,9 +214,9 @@ Seperti yang telah dijelaskan pada bagian sebelumnya, pada penelitian ini akan d
    |  Safety Last! (1923)                       |  Action \| Comedy \| Romance |
    |  Reefer Madness: The Movie Musical (2005)  |  Comedy \| Drama \| Musical  |
 
-   Tabel 7. Hasil dari top-10 rekomendasi film yang mengandalkan pendapat dari pengguna lain (penilain pengguna dengan _ID_ 47)
+   Tabel 7. Hasil dari top-10 rekomendasi film yang mengandalkan pendapat dari pengguna lain
 
-   Dari Tabel 6 dapat dilihat bahwa film dengan _genre_ drama menjadi film yang paling tinggi _rating_-nya. Data ini diambil dari penilaian film yang dilakukan oleh pengguna dengan _ID_ 47. Selanjutnya, dari Tabel 7 dapat dilihat bahwa sistem memberikan top-10 rekomendasi film dengan mayoritas _genre_-nya adalah drama. Dapat dilihat bahwa dari 10 rekomendasi film, 7 diantaranya merupakan film dengan _genre_ drama, sehingga hasil ini sesuai dengan _rating genre_ film tertinggi yang telah dinilai oleh pengguna _ID_ 47.
+   Dari Tabel 6 dapat dilihat bahwa film dengan _genre_ drama menjadi film yang paling tinggi _rating_-nya. Data ini diambil dari penilaian film yang dilakukan oleh para pengguna. Selanjutnya, dari Tabel 7 dapat dilihat bahwa sistem memberikan top-10 rekomendasi film dengan mayoritas _genre_-nya adalah drama. Dapat dilihat bahwa dari 10 rekomendasi film, 7 diantaranya merupakan film dengan _genre_ drama, sehingga hasil ini sesuai dengan _rating genre_ film tertinggi yang ditunjukkan oleh Tabel 6.
 
 # **_Evaluation_**
 
@@ -242,11 +242,13 @@ Sedangkan hasil dari metrik evaluasi untuk metode _Collaborative Filtering_ yang
 
 Gambar 1. Metrik evaluasi untuk metode _Collaborative Filtering_
 
-Dari proses ini, diperoleh nilai _error_ akhir sebesar 0.1794 dan nilai _error_ pada data validasi sebesar 0.1993 dengan menggunakan _epochs_ = 20. Nilai tersebut cukup bagus untuk sebuah sistem rekomendasi. MRSE yang mendekati nol menunjukkan bahwa selisih antara nilai prediksi model dengan nilai aktual sangat kecil [7]. Artinya, model berhasil memprediksi data uji dengan sangat baik. Selain itu, dari Gambar 1 dapat dilihat bahwa proses pelatihan model cukup _smooth_ dan model konvergen, sehingga dapat disimpulkan bahwa data grafik plot masuk ke dalam kategori _goodfit_. 
+Dari proses ini, diperoleh nilai _error_ akhir sebesar 0.1794 dan nilai _error_ pada data validasi sebesar 0.1993 dengan menggunakan _epochs_ = 20. Nilai tersebut cukup bagus untuk sebuah sistem rekomendasi. MRSE yang mendekati nol menunjukkan bahwa selisih antara nilai prediksi model dengan nilai aktual sangat kecil [7]. Artinya, model berhasil memprediksi data uji dengan sangat baik. 
+
+Namun, jika dilihat dari Gambar 1, metrik evaluasi tersebut menunjukkan bahwa data grafik plot masuk ke dalam kategori _overfit_. _Overfitting_ adalah kondisi di mana model telah mempelajari dataset pelatihan terlalu baik, hingga memperhatikan detail-detail kecil, kebisingan statistik, atau fluktuasi acak yang ada dalam dataset pelatihan [8]. Akibatnya, model tersebut menjadi terlalu khusus untuk data pelatihan tertentu, namun kurang mampu untuk menggeneralisasi dengan baik pada data baru yang belum pernah dilihat sebelumnya. Hal ini ditandai dengan plot _training loss_ yang terus berkurang seiring dengan jumlah _epochs_ pada saat proses pelatihan yang artinya model terus meningkatkan performa pada data pelatihan. Sedangkan pada plot _validation loss_ ditandai dengan grafik yang menurun pada awal pelatihan dan kemudian mulai meningkat, yang artinya hal ini menunjukkan bahwa pada awalnya, model berhasil menggeneralisasi pada data validasi, namun setelah mencapai titik tertentu, model mulai _overfitting_ dan performanya pada data validasi mulai menurun. Sehingga dapat disimpulkan bahwa, jika pada grafik plot metrik evaluasi terlihat adanya gap antara _training loss_ dan _validation loss_, atau _validation loss_ meningkat setelah mencapai titik tertentu, sedangkan _training loss_ tetap menurun, maka ini menunjukkan bahwa model mengalami _overfitting_. 
 
 # **Kesimpulan**
 
-Penelitian ini bertujuan untuk mengembangkan sistem rekomendasi film yang efektif dan akurat dalam menyajikan rekomendasi film yang lebih sesuai dengan minat dan preferensi masing-masing pengguna. Dengan begitu, pelaku bisnis dari platform _streaming_ film dapat menentukan target penonton dengan lebih tepat dan memberikan pengalaman menonton yang lebih personal dan memuaskan bagi para penggunanya. Dari penelitian ini, berhasil dibuat dua sistem rekomendasi dengan hasil yang cukup baik pula, yaitu sistem rekomendasi film berdasarkan data historis dari preferensi dan penilaian film oleh pengguna itu sendiri dengan menggunakan metode _Content Based Filtering_ yang menghasilkan _precision_ mendekati angka 1 dan sistem rekomendasi film berdasarkan data kolaboratif dari pengguna lain dengan minat serupa dengan menggunakan metode _Collaborative Filtering_ dimana nilai _error_ akhir sebesar 0.1764 dan nilai _error_ pada data validasi sebesar 0.2040, kedua nilai _error_ ini cukup bagus untuk sebuah sistem rekomendasi.
+Penelitian ini bertujuan untuk mengembangkan sistem rekomendasi film yang efektif dan akurat dalam menyajikan rekomendasi film yang lebih sesuai dengan minat dan preferensi masing-masing pengguna. Dengan begitu, pelaku bisnis dari platform _streaming_ film dapat menentukan target penonton dengan lebih tepat dan memberikan pengalaman menonton yang lebih personal dan memuaskan bagi para penggunanya. Dari penelitian ini, berhasil dibuat dua sistem rekomendasi dengan hasil yang cukup baik pula, yaitu sistem rekomendasi film berdasarkan data historis dari preferensi dan penilaian film oleh pengguna itu sendiri dengan menggunakan metode _Content Based Filtering_ yang menghasilkan _precision_ mendekati angka 1 dan sistem rekomendasi film berdasarkan data kolaboratif dari pengguna lain dengan minat serupa dengan menggunakan metode _Collaborative Filtering_ dimana nilai _error_ akhir sebesar 0.1764 dan nilai _error_ pada data validasi sebesar 0.2040, kedua nilai _error_ ini cukup bagus untuk sebuah sistem rekomendasi. Namun sayangnya, metrik evaluasi menunjukkan bahwa model yang telah dibangun mengalami _overfit_.
 
 Meskipun tujuan utama penelitian ini telah tercapai, untuk optimalisasi lebih lanjut, beberapa improvisasi pada model dapat dilakukan untuk meningkatkan kualitas rekomendasi sehingga dapat memberikan wawasan yang lebih akurat dan relevan bagi para penggunanya dengan lebih tepat dan efisien.
 
@@ -266,3 +268,5 @@ Service,” _Jesya Jurnal Ekonomi & Ekonomi Syariah_, vol. 6, no. 1, Jan. 2023, 
 [6]    E-Jurnal UAJY. Tersedia: [tautan](http://e-journal.uajy.ac.id/11794/4/TF070093.pdf). Diakses pada 31 Juli 2023.
 
 [7]    aitechtrend. "How to Interpret RMSE and Use it in Your Modeling". Tersedia: [tautan](https://aitechtrend.com/how-to-interpret-rmse-and-use-it-in-your-modeling/). Diakses pada 31 Juli 2023.
+
+[8]    Machine Learning Mastery. "How to use Learning Curves to Diagnose Machine Learning Model Performance". Tersedia: [tautan](https://machinelearningmastery.com/learning-curves-for-diagnosing-machine-learning-model-performance/). Diakses pada 5 Agustus 2023.
