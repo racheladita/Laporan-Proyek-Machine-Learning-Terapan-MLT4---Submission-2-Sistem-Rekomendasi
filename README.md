@@ -193,19 +193,13 @@ Seperti yang telah dijelaskan pada bagian sebelumnya, pada penelitian ini akan d
    Pada proses pelatihan model menggunakan metode _Collaborative Filtering_, dilakukan proses perhitungan dengan membuat _class_ RecommenderNet menggunakan keras _Model class_. RecommenderNet merupakan jenis model jaringan saraf (_neural network_) yang digunakan untuk sistem rekomendasi. Model ini dirancang khusus untuk menangani masalah rekomendasi item, seperti film, musik, atau produk, berdasarkan preferensi pengguna atau data interaksi pengguna dengan item tersebut. Pada penelitian ini, pertama-tama RecommenderNet menghitung skor kecocokan antara pengguna dan film dengan menggunakan teknik _embedding_. Selanjutnya, dilakukan operasi perkalian _dot product_ antara _embedding_ pengguna dan film. Selain itu, ditambahkan juga bias untuk setiap pengguna dan film. Terakhir, skor kecocokan ditetapkan dalam skala [0,1] dengan fungsi aktivasi _sigmoid_. 
 
    Pada penelitian ini, sistem rekomendasi yang telah berhasil dibangun menggunakan metode _Collaborative Filtering_ akan diuji untuk mendapatkan rekomendasi film untuk seorang pengguna dimana hasil rekomendasi merupakan rekomendasi yang mengandalkan pendapat dari pengguna lain.
-
-   Showing recommendations for users: 47                                      
-   =======================================================================
-   Movie with high ratings from user
-   =======================================================================
    
    |                 movie_name                 |         genre          |
    |--------------------------------------------|------------------------|
    |  Green Mile, The (1999)                    |  Crime|Drama           |
    |  Whiplash (2014)                           |  Drama                 |
 
-   Top 10 movie recommendation
-   =======================================================================
+   Tabel 6. Film dengan penilaian tertinggi yang diperoleh dari penilain pengguna dengan _ID_ 47
 
    |                 movie_name                 |         genre          |
    |--------------------------------------------|------------------------|
@@ -220,15 +214,9 @@ Seperti yang telah dijelaskan pada bagian sebelumnya, pada penelitian ini akan d
    |  Safety Last! (1923)                       |  Action|Comedy|Romance |
    |  Reefer Madness: The Movie Musical (2005)  |  Comedy|Drama|Musical  |
 
-   
+   Tabel 7. Hasil dari top-10 rekomendasi film yang mengandalkan pendapat dari pengguna lain (penilain pengguna dengan _ID_ 47)
 
-
-
-   ![image](https://github.com/racheladita/Laporan-Proyek-Machine-Learning-Terapan-MLT4---Submission-2-Sistem-Rekomendasi/assets/77524477/f7662449-7804-4c06-9ced-0ab6ab67e714)
-
-   Gambar 1. Hasil dari top-10 rekomendasi film yang mengandalkan pendapat dari pengguna lain
-
-   Dari Gambar 1 dapat dilihat bahwa film dengan _genre_ drama menjadi film yang paling tinggi _rating_-nya. Selanjutnya, sistem memberikan top-10 rekomendasi film dengan mayoritas _genre_-nya adalah drama. Dapat dilihat bahwa dari 10 rekomendasi film, 7 diantaranya merupakan film dengan _genre_ drama, sehingga hasil ini sesuai dengan _rating genre_ film tertinggi yang telah dinilai oleh pengguna lain.
+   Dari Tabel 6 dapat dilihat bahwa film dengan _genre_ drama menjadi film yang paling tinggi _rating_-nya. Data ini diambil dari penilaian film yang dilakukan oleh pengguna dengan _ID_ 47. Selanjutnya, dari Tabel 7 dapat dilihat bahwa sistem memberikan top-10 rekomendasi film dengan mayoritas _genre_-nya adalah drama. Dapat dilihat bahwa dari 10 rekomendasi film, 7 diantaranya merupakan film dengan _genre_ drama, sehingga hasil ini sesuai dengan _rating genre_ film tertinggi yang telah dinilai oleh pengguna _ID_ 47.
 
 # **_Evaluation_**
 
@@ -248,45 +236,13 @@ $$ P = 1 $$
 
 Sehingga dapat disimpulkan bahwa sistem rekomendasi dengan menggunakan metode _Content Based Filtering_ menghasilkan hasil keluaran dengan kecocokan yang tinggi, karena hasil perhitungan _precision_-nya sama dengan 1.
 
-Sedangkan hasil dari metrik evaluasi untuk metode _Collaborative Filtering_ yang menggunakan grafik dari matplotlib, dapat dilihat pada Gambar 2. 
+Sedangkan hasil dari metrik evaluasi untuk metode _Collaborative Filtering_ yang menggunakan grafik dari matplotlib, dapat dilihat pada Gambar 1. 
 
 ![image](https://github.com/racheladita/Laporan-Proyek-Machine-Learning-Terapan-MLT4---Submission-2-Sistem-Rekomendasi/assets/77524477/e7da2798-1410-4778-830f-6af870513eaf)
 
-|  Showing recommendations for users : 47                                     ||
-|=============================================================================||
-|  Movie with high ratings from user                                          ||
-|-----------------------------------------------------------------------------||
-|                       movie_name                   |          genre          |
-|----------------------------------------------------|-------------------------|
-|  Green Mile, The (1999)                            | Crime|Drama             |
-|  Fantastic Four (2005)                             | Action|Adventure|Sci-Fi |
-|  Serenity (2005)                                   | Action|Adventure|Sci-Fi |
-|  Star Wars: Episode IV - A New Hope (1977)         | Action|Adventure|Sci-Fi |
-|  Superman (1978)                                   | Action|Adventure|Sci-Fi |
+Gambar 1. Metrik evaluasi untuk metode _Collaborative Filtering_
 
-
-===========================
-
---------------------------------
- : 
-Whiplash (2014) : Drama
---------------------------------
-Top 10 movie recommendation
---------------------------------
-Paths of Glory (1957) : Drama|War
-Guess Who's Coming to Dinner (1967) : Drama
-Two Family House (2000) : Drama
-Hope and Glory (1987) : Drama
-Lady Jane (1986) : Drama|Romance
-Awful Truth, The (1937) : Comedy|Romance
-Come and See (Idi i smotri) (1985) : Drama|War
-Adam's Rib (1949) : Comedy|Romance
-Safety Last! (1923) : Action|Comedy|Romance
-Reefer Madness: The Movie Musical (2005) : Comedy|Drama|Musical
-
-Gambar 2. Metrik evaluasi untuk metode _Collaborative Filtering_
-
-Dari proses ini, diperoleh nilai _error_ akhir sebesar 0.1794 dan nilai _error_ pada data validasi sebesar 0.1993 dengan menggunakan _epochs_ = 20. Nilai tersebut cukup bagus untuk sebuah sistem rekomendasi. MRSE yang mendekati nol menunjukkan bahwa selisih antara nilai prediksi model dengan nilai aktual sangat kecil [7]. Artinya, model berhasil memprediksi data uji dengan sangat baik. Selain itu, dari Gambar 2 dapat dilihat bahwa proses pelatihan model cukup _smooth_ dan model konvergen, sehingga dapat disimpulkan bahwa data grafik plot masuk ke dalam kategori _goodfit_. 
+Dari proses ini, diperoleh nilai _error_ akhir sebesar 0.1794 dan nilai _error_ pada data validasi sebesar 0.1993 dengan menggunakan _epochs_ = 20. Nilai tersebut cukup bagus untuk sebuah sistem rekomendasi. MRSE yang mendekati nol menunjukkan bahwa selisih antara nilai prediksi model dengan nilai aktual sangat kecil [7]. Artinya, model berhasil memprediksi data uji dengan sangat baik. Selain itu, dari Gambar 1 dapat dilihat bahwa proses pelatihan model cukup _smooth_ dan model konvergen, sehingga dapat disimpulkan bahwa data grafik plot masuk ke dalam kategori _goodfit_. 
 
 # **Kesimpulan**
 
