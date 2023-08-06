@@ -44,7 +44,35 @@ Penelitian ini bertujuan untuk mengembangkan sistem rekomendasi film yang efekti
     
     a.   Untuk membuat sistem rekomendasi film berdasarkan data historis dari preferensi dan penilaian film oleh pengguna itu sendiri akan digunakan metode _Content Based Filtering_. _Content Based Filtering_ mempelajari profil minat pengguna dengan menyarankan item serupa yang pernah disukai di masa lalu atau sedang dilihat di masa kini kepada pengguna [3].
     
-    b.   Untuk membuat sistem rekomendasi film berdasarkan data kolaboratif dari pengguna lain dengan minat serupa akan digunakan metode _Collaborative Filtering_. _Collaborative Filtering_ adalah metode yang mengandalkan pendapat dari pengguna lain yang memiliki minat/preferensi serupa dengan melakukan pencarian pola kesamaan dan perbedaan dalam pilihan film untuk memberikan rekomendasi yang relevan [3]. 
+    b.   Untuk membuat sistem rekomendasi film berdasarkan data kolaboratif dari pengguna lain dengan minat serupa akan digunakan metode _Collaborative Filtering_. _Collaborative Filtering_ adalah metode yang mengandalkan pendapat dari pengguna lain yang memiliki minat/preferensi serupa dengan melakukan pencarian pola kesamaan dan perbedaan dalam pilihan film untuk memberikan rekomendasi yang relevan [3].
+
+*   Penjelasan Tambahan
+
+    Berikut adalah penjelasan mengenai arti dari kolom-kolom pada dataset yang akan digunakan. Diharapkan dengan adanya penjelasan tambahan ini, informasi yang tersedia dalam masing-masing dataset menjadi lebih jelas dan dapat membantu dalam pemahaman lebih lanjut tentang data yang digunakan dalam penelitian ini.
+
+    1. Dataset 'links.csv':
+
+       * 'movieId' : Nomor unik yang merupakan identifikasi untuk masing-masing film dalam dataset.
+       * 'imdbId' : Nomor unik yang merupakan identifikasi untuk masing-masing film pada IMDb (_Internet Movie Database_).
+       * 'tmdbId' : Nomor unik yang merupakan identifikasi untuk masing-masing film pada TMDb (_The Movie Database_).
+
+    2. Dataset 'movies.csv':
+
+       * 'movieId' : Nomor unik yang merupakan identifikasi untuk masing-masing film dalam dataset.
+       * 'title' : Judul dari film yang bersangkutan.
+       * 'genres' : _Genre-genre_ yang diwakili oleh film tersebut. Satu film bisa memiliki beberapa _genre_ yang dipisahkan oleh karakter '|'.
+
+    3. Dataset 'ratings.csv':
+
+       * 'userId' : Nomor unik yang merupakan identifikasi untuk masing-masing pengguna dalam dataset.
+       * 'movieId' : Nomor unik yang merupakan identifikasi untuk masing-masing film dalam dataset.
+       * 'rating' : Penilaian yang diberikan oleh pengguna untuk suatu film. Nilai _rating_ berkisar antara 0.5 hingga 5.0 dalam interval 0.5.
+
+    4. Dataset 'tags.csv':
+
+       * 'userId' : Nomor unik yang merupakan identifikasi untuk masing-masing pengguna dalam dataset.
+       * 'movieId' : Nomor unik yang merupakan identifikasi untuk masing-masing film dalam dataset.
+       * 'tag' : Kata kunci atau tag yang diberikan oleh pengguna untuk suatu film.
 
 # **_Data Understanding_**
 
